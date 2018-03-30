@@ -44,7 +44,7 @@ public class SATTabuSearch extends TabuSearch<SATSolution>
 
     @Override
     protected double evaluate(SATSolution solution) {
-        int val = instance.getNumberOfClauses() - instance.getNumberOfClausesSatisfied(solution);
+        double val = solution.getEvaluation();
 //        if(val < minVal)
 //        {
 //            minVal = val;

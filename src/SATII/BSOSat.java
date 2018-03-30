@@ -53,7 +53,7 @@ public class BSOSat extends BSOBasic<SATSolution>
 
     protected boolean optimalSolution(SATSolution solution)
     {
-        return instance.getNumberOfClauses() == instance.getNumberOfClausesSatisfied(solution);
+        return solution.getEvaluation() == 0;
     }
 
 
@@ -64,7 +64,7 @@ public class BSOSat extends BSOBasic<SATSolution>
         bsoSat.numberOfBees = numBees;
         bsoSat.maxChances = maxCh;
         bsoSat.maxIterationsBees = maxLocal;
-        BeeSAT bee = new BeeSAT(instance,SATSolution.generateRandomSolution(instance.getNumberOfVariables()),
+        BeeSAT bee = new BeeSAT(instance,SATSolution.generateRandomSolution(instance),
                 maxLocal);
         return bsoSat.search(bee);
     }

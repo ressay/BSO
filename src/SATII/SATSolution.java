@@ -9,19 +9,20 @@ import java.util.concurrent.ThreadLocalRandom;
 public class SATSolution
 {
     private BitSet values;
-    private int numberOfVariables;
+    private SATInstance instance;
+    private double evaluation = -1;
 
-    public SATSolution(int numberOfVariables)
+    public SATSolution(SATInstance instance)
     {
-        this.numberOfVariables = numberOfVariables;
-        values = new BitSet(numberOfVariables);
+        this.instance = instance;
+        values = new BitSet(instance.getNumberOfVariables());
     }
 
-    public static SATSolution generateRandomSolution(int size)
+    public static SATSolution generateRandomSolution(SATInstance instance)
     {
-        SATSolution solution = new SATSolution(size);
+        SATSolution solution = new SATSolution(instance);
 
-        for (int i = 0; i < size; i++)
+        for (int i = 0; i < solution.length(); i++)
             if(ThreadLocalRandom.current().nextInt(0,2 ) == 1)
                 solution.set(i);
             else
@@ -35,7 +36,7 @@ public class SATSolution
         BitSet copyBitset = new BitSet(values.length());
         copyBitset.clear();
         copyBitset.or(values);
-        SATSolution solution = new SATSolution(length());
+        SATSolution solution = new SATSolution(instance);
         solution.values = copyBitset;
         return solution;
     }
@@ -74,7 +75,7 @@ public class SATSolution
 
     public int length()
     {
-        return numberOfVariables;
+        return instance.getNumberOfVariables();
     }
 
     @Override
@@ -101,5 +102,12 @@ public class SATSolution
         BitSet dis = copy().values;
         dis.xor(solution.values);
         return dis.cardinality();
+    }
+
+    public double getEvaluation()
+    {
+        if(evaluation == -1)
+            evaluation = instance.getNumberOfClauses() - instance.getNumberOfClausesSatisfied(this);
+        return evaluation;
     }
 }

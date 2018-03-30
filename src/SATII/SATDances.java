@@ -13,12 +13,15 @@ public class SATDances extends DancesHeap<SATSolution>
 
     SATInstance instance;
     int maxChances = 15;
+    int nbChances;
     SATSolution bestDiversity = null;
     LinkedList<DiversityNode> diversityNodes = new LinkedList<>();
+    SATSolution previousBest = null;
 
     public SATDances(SATInstance instance, int maxChances) {
         this.instance = instance;
         this.maxChances = maxChances;
+        nbChances = maxChances;
     }
 
 
@@ -27,14 +30,14 @@ public class SATDances extends DancesHeap<SATSolution>
     public void add(SATSolution solution)
     {
         super.add(solution);
-//        addDiversity(solution);
+        addDiversity(solution);
     }
 
-    int minVal = 100000;
+    double minVal = 100000;
 
     @Override
     public double evaluate(SATSolution solution) {
-        int val = instance.getNumberOfClauses() - instance.getNumberOfClausesSatisfied(solution);
+        double val = solution.getEvaluation();
         if(val < minVal)
         {
             minVal = val;
@@ -47,7 +50,25 @@ public class SATDances extends DancesHeap<SATSolution>
     public SATSolution getBest()
     {
         SATSolution bestQuality = super.getBest();
-        return bestQuality;
+        SATSolution best = bestQuality;
+
+        if(previousBest != null)
+        {
+            double df = bestQuality.getEvaluation() - previousBest.getEvaluation();
+            if(df < 0)
+                nbChances = maxChances;
+            else
+            {
+                nbChances--;
+                if(nbChances == 0)
+                {
+                    best = bestDiversity;
+                    nbChances = maxChances;
+                }
+            }
+        }
+        previousBest = best;
+        return best;
     }
 
 
@@ -73,12 +94,15 @@ public class SATDances extends DancesHeap<SATSolution>
 
     public void addDiversity(SATSolution solution)
     {
-        if (bestDiversity == null)
+        if (bestDiversity == null) {
             bestDiversity = solution;
+            diversityNodes.add(new DiversityNode(solution,solution.length()));
+        }
         else
         {
             int bestDiversityDistance = solution.length();
             int minDistance = solution.length();
+
             for(DiversityNode node : diversityNodes) {
                 int distance = node.solution.distance(solution);
                 // new diversity of node
