@@ -71,7 +71,6 @@ public class BSOSatDynamic extends BSOSat
             heat = maxHeat;
             numberOfBees = maxNumberOfBees;
             coolingRate = maxCoolingRate = maxCoolingRate*1.2;
-            System.out.println("entered");
         }
     }
 
