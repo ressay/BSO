@@ -12,8 +12,8 @@ import java.util.List;
  */
 public abstract class BSOAbstract<T>
 {
-    private TabuList<T> tabuList;
-    private Dances<T> dances;
+    protected TabuList<T> tabuList;
+    protected Dances<T> dances;
 
     public BSOAbstract(TabuList<T> tabuList, Dances<T> dances) {
         this.tabuList = tabuList;
@@ -23,7 +23,7 @@ public abstract class BSOAbstract<T>
     abstract protected boolean end(T solution);
     abstract protected List<Bee<T>> determineSearchPoints(T solution);
 
-    protected T search(Bee<T> beeInit)
+    public T search(Bee<T> beeInit)
     {
         T sRef = beeInit.init();
         T bestSolution = sRef;

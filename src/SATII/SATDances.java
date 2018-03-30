@@ -14,9 +14,12 @@ public class SATDances extends DancesHeap<SATSolution>
     SATInstance instance;
     int maxChances = 15;
     int nbChances;
+    int maxDiversity = -1;
+    int maxDances = -1;
     SATSolution bestDiversity = null;
     LinkedList<DiversityNode> diversityNodes = new LinkedList<>();
     SATSolution previousBest = null;
+    protected boolean choseDiversity = false;
 
     public SATDances(SATInstance instance, int maxChances) {
         this.instance = instance;
@@ -31,6 +34,11 @@ public class SATDances extends DancesHeap<SATSolution>
     {
         super.add(solution);
         addDiversity(solution);
+
+        if(maxDances != -1 && heap.getCurrentSize() > maxDances)
+            heap.removeLast();
+        if(maxDiversity != -1 && diversityNodes.size() > maxDiversity)
+            diversityNodes.removeFirst();
     }
 
     double minVal = 100000;
@@ -49,6 +57,7 @@ public class SATDances extends DancesHeap<SATSolution>
     @Override
     public SATSolution getBest()
     {
+        choseDiversity = false;
         SATSolution bestQuality = super.getBest();
         SATSolution best = bestQuality;
 
@@ -63,7 +72,9 @@ public class SATDances extends DancesHeap<SATSolution>
                 if(nbChances == 0)
                 {
                     best = bestDiversity;
+                    choseDiversity = true;
                     nbChances = maxChances;
+                    heap.clear();
                 }
             }
         }
@@ -71,6 +82,10 @@ public class SATDances extends DancesHeap<SATSolution>
         return best;
     }
 
+    public boolean didChoseDiversity()
+    {
+        return choseDiversity;
+    }
 
     private static class DiversityNode
     {
@@ -112,11 +127,18 @@ public class SATDances extends DancesHeap<SATSolution>
                 if(minDistance > distance)
                     minDistance = distance;
                 // updating best diversity solution
-                if(node.getDiversityValue() < bestDiversityDistance)
+                if(node.getDiversityValue() > bestDiversityDistance)
                 {
                     bestDiversityDistance = node.getDiversityValue();
-                    bestDiversity = node.solution;
+                    if(node.getDiversityValue() == minDistance)
+                        bestDiversity = (node.solution.getEvaluation() > solution.getEvaluation())?
+                                solution:node.solution;
+                    else
+                        bestDiversity = node.solution;
                 }
+                else if(node.getDiversityValue() == bestDiversityDistance)
+                    bestDiversity = (node.solution.getEvaluation() > bestDiversity.getEvaluation())?
+                            bestDiversity:node.solution;
             }
 
             diversityNodes.add(new DiversityNode(solution,minDistance));

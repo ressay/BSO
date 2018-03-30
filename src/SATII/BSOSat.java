@@ -14,18 +14,18 @@ import java.util.List;
 public class BSOSat extends BSOBasic<SATSolution>
 {
     SATInstance instance;
-    private int flip = 6;
-    private int numberOfBees = 10;
-    private int maxChances = 6;
-    private int maxIterationsBees = 10;
+    protected int flip = 6;
+    protected int numberOfBees = 10;
+    protected int maxIterationsBees = 10;
 
-    public BSOSat(SATInstance ins) {
-        super(new SATDances(ins,6));
+    public BSOSat(SATInstance ins, int maxChances) {
+        super(new SATDances(ins,maxChances));
         this.instance = ins;
+
     }
 
-    public BSOSat(SATInstance ins, long maximumIteration) {
-        super(new SATDances(ins,6),maximumIteration);
+    public BSOSat(SATInstance ins, long maximumIteration,int maxChances) {
+        super(new SATDances(ins,maxChances),maximumIteration);
         this.instance = ins;
     }
 
@@ -59,12 +59,23 @@ public class BSOSat extends BSOBasic<SATSolution>
 
     public static SATSolution searchBSOSAT(SATInstance instance,int maxIter,int flip,int numBees, int maxCh, int maxLocal)
     {
-        BSOSat bsoSat = new BSOSat(instance,maxIter);
+        BSOSat bsoSat = new BSOSat(instance,maxIter,maxCh);
         bsoSat.flip = flip;
         bsoSat.numberOfBees = numBees;
-        bsoSat.maxChances = maxCh;
         bsoSat.maxIterationsBees = maxLocal;
         BeeSAT bee = new BeeSAT(instance,SATSolution.generateRandomSolution(instance),
+                maxLocal);
+        return bsoSat.search(bee);
+    }
+
+    public static SATSolution searchBSOSAT(SATInstance instance,int maxIter,int flip,int numBees,
+                                           int maxCh, int maxLocal,SATSolution sol)
+    {
+        BSOSat bsoSat = new BSOSat(instance,maxIter,maxCh);
+        bsoSat.flip = flip;
+        bsoSat.numberOfBees = numBees;
+        bsoSat.maxIterationsBees = maxLocal;
+        BeeSAT bee = new BeeSAT(instance,sol,
                 maxLocal);
         return bsoSat.search(bee);
     }

@@ -8,7 +8,7 @@ import com.company.Heap;
  */
 public abstract class DancesHeap<T> extends Dances<T>
 {
-    Heap<T> heap = new Heap<T>() {
+    protected Heap<T> heap = new Heap<T>() {
         @Override
         public int compare(T n1, T n2) {
             return compareSolutions(n1,n2);

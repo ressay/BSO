@@ -62,6 +62,18 @@ public abstract class Heap<T>
         return node;
     }
 
+    public T removeLast()
+    {
+        if(currentSize == 0)
+            return null;
+        return get(--currentSize);
+    }
+
+    public void clear()
+    {
+        currentSize = 0;
+    }
+
     private void heapify(int i)
     {
         int l = left(i),r = right(i);
@@ -100,6 +112,7 @@ public abstract class Heap<T>
         heap[i] = heap[j];
         heap[j] = node;
     }
+
 
     private void doubleSize()
     {

@@ -19,7 +19,8 @@ public class BeeSAT extends Bee<SATSolution>
 
     @Override
     protected SATSolution init() {
-        return searchZone = SATSolution.generateRandomSolution(instance);
+//        return searchZone = SATSolution.generateRandomSolution(instance);
+        return searchZone;
     }
 
     @Override

@@ -8,12 +8,13 @@ import MetaHeuristics.TabuList;
  */
 public abstract class BSOBasic<T> extends BSOAbstract<T>
 {
-    long maximumIteration;
-    long numberOfIterations = 0;
-    boolean endS = false;
+    protected long maximumIteration;
+    protected long numberOfIterations = 0;
+    protected boolean endS = false;
+    private static final int maxTabuListSize = 100;
 
     public BSOBasic(Dances<T> dances) {
-        super(new BasicTabuList<>(100),dances);
+        super(new BasicTabuList<>(maxTabuListSize),dances);
         // default number of max iterations
         maximumIteration = 10000;
     }
