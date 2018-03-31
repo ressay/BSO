@@ -13,4 +13,8 @@ public abstract class TabuList<T>
 
     abstract public boolean contains(T solution);
     abstract public void add(T solution);
+    public int size()
+    {
+        return 0;
+    }
 }

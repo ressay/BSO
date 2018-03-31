@@ -10,6 +10,7 @@ public class BeeSAT extends Bee<SATSolution>
     private SATInstance instance;
     private int maxIterations = 10;
     private int maxListSize = 0;
+    private boolean first = true;
 
     public BeeSAT(SATInstance instance,SATSolution searchZone, int maxIterations) {
         this.instance = instance;
@@ -19,8 +20,11 @@ public class BeeSAT extends Bee<SATSolution>
 
     @Override
     protected SATSolution init() {
-//        return searchZone = SATSolution.generateRandomSolution(instance);
-        return searchZone;
+//
+        if(first)
+            return searchZone;
+        first = false;
+        return searchZone = SATSolution.generateRandomSolution(instance);
     }
 
     @Override

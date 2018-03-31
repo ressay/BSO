@@ -8,7 +8,6 @@ import java.util.LinkedList;
 public class BasicTabuList<T> extends TabuList<T>
 {
     LinkedList<T> tabuList = new LinkedList<>();
-    long maxListSize;
 
     public BasicTabuList(long maxListSize) {
         super(maxListSize);
@@ -24,8 +23,15 @@ public class BasicTabuList<T> extends TabuList<T>
 
     @Override
     public void add(T solution) {
+//        System.out.println("adding !!" + maxListSize);
         tabuList.add(solution);
         if(maxListSize >= 0 && tabuList.size() > maxListSize)
             tabuList.removeFirst();
+    }
+
+    @Override
+    public int size()
+    {
+       return tabuList.size();
     }
 }

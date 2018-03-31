@@ -17,6 +17,7 @@ public abstract class BSOAbstract<T>
 
     public BSOAbstract(TabuList<T> tabuList, Dances<T> dances) {
         this.tabuList = tabuList;
+        System.out.println(tabuList.size());
         this.dances = dances;
     }
 
@@ -40,8 +41,10 @@ public abstract class BSOAbstract<T>
                 sRef = dances.getBest();
             }while (sRef != null && tabuList.contains(sRef));
 
-            if(sRef == null)
+            if(sRef == null) {
                 sRef = beeInit.init();
+                System.out.println("sref is null!!!");
+            }
 
             double evaluation = dances.evaluate(sRef);
             if(evaluation < evaluationBest) {

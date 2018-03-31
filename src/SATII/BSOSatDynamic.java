@@ -4,6 +4,7 @@ import BSO.Bee;
 
 import java.util.LinkedList;
 import java.util.List;
+import java.util.concurrent.ThreadLocalRandom;
 
 /**
  * Created by ressay on 30/03/18.
@@ -15,6 +16,7 @@ public class BSOSatDynamic extends BSOSat
     protected double maxHeat;
     protected int maxNumberOfBees;
     protected double maxCoolingRate;
+    protected int maxIterationsBees;
     public BSOSatDynamic(SATInstance ins, long maximumIteration, int maxChances
     ,double heat,int coolingRate) {
         super(ins, maximumIteration, maxChances);
@@ -28,26 +30,35 @@ public class BSOSatDynamic extends BSOSat
     protected List<Bee<SATSolution>> determineSearchPoints(SATSolution solution) {
 
         LinkedList<Bee<SATSolution>> list = new LinkedList<>();
-        list.add(new BeeSAT(instance,solution,maxIterationsBees));
+        list.add(new BeeSAT(instance,solution, limitIterationsBees));
 
-        int step = (int)(heat - instance.getNumberOfVariables()/flip)/(numberOfBees-1);
-        int p = 0,k = 0;
-        for (int i = 0; i < numberOfBees; i++) {
+        int distance = (int)heat;
+        for (int i = 0; i < numberOfBees; ) {
 
             SATSolution newSearchPoint = solution.copy();
-            // flip heat bits for each new solution
-            for (int j = i*step; j < heat ; j++) {
-                newSearchPoint.flip(p*flip+k);
-                p++;
-                if(p*flip+k >= solution.length())
+
+
+            LinkedList<Integer> indexes = new LinkedList<>();
+            for (int j = 0; j < instance.getNumberOfVariables(); j++) {
+                indexes.add(j);
+            }
+
+
+            while (indexes.size() >= distance) {
+                // flip distance bits for each new solution
+                for (int j = 0; j < distance; j++) {
+                    int index = indexes.remove(ThreadLocalRandom.current().nextInt(0, indexes.size()));
+                    newSearchPoint.flip(index);
+                }
+                i++;
+                list.add(new BeeSAT(instance, newSearchPoint, limitIterationsBees));
+                if(numberOfIterations %50 == 0)
                 {
-                    k = (k+1)%flip;
-                    p=0;
-                    flip = (flip+1)%solution.length();
-                    if(flip == 0) flip = 1;
+                    System.out.println("distance: "+ distance);
                 }
             }
-            list.add(new BeeSAT(instance,newSearchPoint,maxIterationsBees));
+
+            distance /= 2;
         }
         coolDown();
         return list;
@@ -55,37 +66,36 @@ public class BSOSatDynamic extends BSOSat
 
     protected void coolDown()
     {
-//        heat = maxHeat-maxHeat*((double)numberOfIterations/(double)maximumIteration)+1;
-//        numberOfBees = (int)(maxNumberOfBees-(double)maxNumberOfBees*((double)numberOfIterations/(double)maximumIteration)+5);
-        heat*= (maximumIteration-coolingRate)/(double)maximumIteration;
-        coolingRate = maxCoolingRate-maxCoolingRate*((double)numberOfIterations/(double)maximumIteration);
-//        coolingRate *= 0.99;
-        if(heat < instance.getNumberOfVariables()/flip)
-            heat = instance.getNumberOfVariables()/flip;
-//        numberOfBees*= (maximumIteration-1)/(double)maximumIteration;
-        if(numberOfIterations%50 == 0)
-        System.out.println("heat: "+heat+" number of bees: "+numberOfBees);
-
+        double minimumHeat = maxHeat/5;
+        heat = (maxHeat-minimumHeat)*(numberOfIterations-coolingRate)/maximumIteration+minimumHeat;
+        numberOfBees = (int)(maxNumberOfBees*heat/maxHeat);
+        limitIterationsBees = (int)(maxIterationsBees*maxHeat/heat);
         if(((SATDances)dances).didChoseDiversity())
         {
             heat = maxHeat;
             numberOfBees = maxNumberOfBees;
             coolingRate = maxCoolingRate = maxCoolingRate*1.2;
         }
+
+        if(numberOfIterations %50 == 0)
+        {
+            System.out.println("heat: " + heat + " number of bees: "+numberOfBees+" local iterations: "+ limitIterationsBees);
+        }
     }
 
-    public static SATSolution searchBSOSATDynamic(SATInstance instance,int maxIter,int flip,int numBees,
-                                                  int maxCh, int maxLocal,double heat,int coolingRate)
-    {
-        BSOSatDynamic bsoSat = new BSOSatDynamic(instance,maxIter,maxCh,heat,coolingRate);
-        bsoSat.flip = flip;
-        bsoSat.numberOfBees = numBees;
-        bsoSat.maxIterationsBees = maxLocal;
-        bsoSat.maxNumberOfBees = numBees;
-        BeeSAT bee = new BeeSAT(instance,SATSolution.generateRandomSolution(instance),
-                maxLocal);
-        return bsoSat.search(bee);
-    }
+//    public static SATSolution searchBSOSATDynamic(SATInstance instance,int maxIter,int flip,int numBees,
+//                                                  int maxCh, int maxLocal,double heat,int coolingRate)
+//    {
+//        BSOSatDynamic bsoSat = new BSOSatDynamic(instance,maxIter,maxCh,heat,coolingRate);
+//        bsoSat.flip = flip;
+//        bsoSat.numberOfBees = numBees;
+//        bsoSat.limitIterationsBees = maxLocal;
+//        bsoSat.maxNumberOfBees = numBees;
+//        bsoSat.maxIterationsBees = maxLocal;
+//        BeeSAT bee = new BeeSAT(instance,SATSolution.generateRandomSolution(instance),
+//                maxLocal);
+//        return bsoSat.search(bee);
+//    }
 
     public static SATSolution searchBSOSATDynamic(SATInstance instance,int maxIter,int flip,int numBees,
     int maxCh, int maxLocal,double heat,int coolingRate,SATSolution sol)
@@ -93,8 +103,9 @@ public class BSOSatDynamic extends BSOSat
         BSOSatDynamic bsoSat = new BSOSatDynamic(instance,maxIter,maxCh,heat,coolingRate);
         bsoSat.flip = flip;
         bsoSat.numberOfBees = numBees;
-        bsoSat.maxIterationsBees = maxLocal;
+        bsoSat.limitIterationsBees = maxLocal;
         bsoSat.maxNumberOfBees = numBees;
+        bsoSat.maxIterationsBees = maxLocal;
         BeeSAT bee = new BeeSAT(instance,sol,
                 maxLocal);
         return bsoSat.search(bee);

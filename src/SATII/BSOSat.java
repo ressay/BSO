@@ -2,8 +2,6 @@ package SATII;
 
 import BSO.BSOBasic;
 import BSO.Bee;
-import BSO.Dances;
-import BSO.DancesHeap;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -16,7 +14,7 @@ public class BSOSat extends BSOBasic<SATSolution>
     SATInstance instance;
     protected int flip = 6;
     protected int numberOfBees = 10;
-    protected int maxIterationsBees = 10;
+    protected int limitIterationsBees = 10;
 
     public BSOSat(SATInstance ins, int maxChances) {
         super(new SATDances(ins,maxChances));
@@ -32,7 +30,7 @@ public class BSOSat extends BSOBasic<SATSolution>
     @Override
     protected List<Bee<SATSolution>> determineSearchPoints(SATSolution solution) {
         LinkedList<Bee<SATSolution>> list = new LinkedList<>();
-        list.add(new BeeSAT(instance,solution,maxIterationsBees));
+        list.add(new BeeSAT(instance,solution, limitIterationsBees));
         for (int i = 0; i < flip && i < numberOfBees; i++) {
             SATSolution newSearchPoint = solution.copy();
             int p = 0;
@@ -40,7 +38,7 @@ public class BSOSat extends BSOBasic<SATSolution>
                 newSearchPoint.flip(p*flip+i);
                 p++;
             }while(p*flip+i < newSearchPoint.length());
-            list.add(new BeeSAT(instance,newSearchPoint,maxIterationsBees));
+            list.add(new BeeSAT(instance,newSearchPoint, limitIterationsBees));
         }
         return list;
     }
@@ -62,7 +60,7 @@ public class BSOSat extends BSOBasic<SATSolution>
         BSOSat bsoSat = new BSOSat(instance,maxIter,maxCh);
         bsoSat.flip = flip;
         bsoSat.numberOfBees = numBees;
-        bsoSat.maxIterationsBees = maxLocal;
+        bsoSat.limitIterationsBees = maxLocal;
         BeeSAT bee = new BeeSAT(instance,SATSolution.generateRandomSolution(instance),
                 maxLocal);
         return bsoSat.search(bee);
@@ -74,7 +72,7 @@ public class BSOSat extends BSOBasic<SATSolution>
         BSOSat bsoSat = new BSOSat(instance,maxIter,maxCh);
         bsoSat.flip = flip;
         bsoSat.numberOfBees = numBees;
-        bsoSat.maxIterationsBees = maxLocal;
+        bsoSat.limitIterationsBees = maxLocal;
         BeeSAT bee = new BeeSAT(instance,sol,
                 maxLocal);
         return bsoSat.search(bee);

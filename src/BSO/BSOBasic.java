@@ -14,7 +14,7 @@ public abstract class BSOBasic<T> extends BSOAbstract<T>
     private static final int maxTabuListSize = 100;
 
     public BSOBasic(Dances<T> dances) {
-        super(new BasicTabuList<>(maxTabuListSize),dances);
+        super(new BasicTabuList<>(100),dances);
         // default number of max iterations
         maximumIteration = 10000;
     }

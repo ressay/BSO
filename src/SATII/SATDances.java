@@ -1,6 +1,7 @@
 package SATII;
 
 import BSO.DancesHeap;
+import com.company.Heap;
 
 import java.util.LinkedList;
 
@@ -60,7 +61,8 @@ public class SATDances extends DancesHeap<SATSolution>
         choseDiversity = false;
         SATSolution bestQuality = super.getBest();
         SATSolution best = bestQuality;
-
+        if(bestQuality == null)
+            return null;
         if(previousBest != null)
         {
             double df = bestQuality.getEvaluation() - previousBest.getEvaluation();
@@ -75,6 +77,7 @@ public class SATDances extends DancesHeap<SATSolution>
                     choseDiversity = true;
                     nbChances = maxChances;
                     heap.clear();
+                    diversityNodes.clear();
                 }
             }
         }
@@ -143,5 +146,14 @@ public class SATDances extends DancesHeap<SATSolution>
 
             diversityNodes.add(new DiversityNode(solution,minDistance));
         }
+    }
+
+    public LinkedList<DiversityNode> getDiversityNodes() {
+        return diversityNodes;
+    }
+
+    public Heap<SATSolution> getHeap()
+    {
+        return heap;
     }
 }
