@@ -1,0 +1,60 @@
+
+\chapter{Introduction : }
+\section{Problématique : }
+\paragraph{}
+Dans ce TP, nous allons tenter d'implémenter et de comparer plusieurs méthodes aveugles, dites aussi \textbf{à base d'espace d'états}, Pour la résolution du problème de satisfiabilité, plus communément appelé \textbf{Problème SAT}, Ce travail est aussi une application directe des différentes méthodes vues durant le premier semestre en ce qui concerne la \textbf{Résolution de problèmes}, mais aussi la \textbf{Complexité des algorithmes et les structures de données}.
+\section{Définitions}
+\paragraph{}
+Avant de rentrer dans les détails de la résolution du problème, nous devons d'abord définir ce qu'est le problème SAT, ainsi que les différentes méthodes utilisées pour sa résolution dans ce TP.
+\subsection{Problème SAT}
+\paragraph{}
+Dans le domaine de l'informatique et de la logique, le problème de satisfiablité (\textbf{SAT}), est un problème de décision où il s'agit d'assigner des valeurs de vérité à des variables tel qu'un ensemble de clauses en forme normale conjonctives FNC\footnote{Une conjonction de disjonction de litérraux} préalablement défini soit satisfiable, en d'autres termes, que toutes les clauses soient vraies pour les mêmes valeurs de vérité de leurs litérraux\footnote{Une variables logique ou bien sa négation}, ce problème est le premier à avoir été démontré comme étant \textbf{NP-Complet}, et cela par \href{https://en.wikipedia.org/wiki/Stephen_Cook}{Stephen Cook} dans \cite{cook}, et qui a donc posé les fondements de l'informathique théoriques et de la théorie de la complexité.
+\newpage
+\subsection{Stratégie de recherche dans l'espace des états}
+En cosidérant l'espace de recherche comme étant une arborescence, dont les noeuds sont les differents états du problème, nous pouvons classer les différentes stratégies de recherches en deux grandes catégories :
+\subsection{Stratégie de rercherche aveugle}
+\paragraph{}Cette catégories englobe les stratégies ou il est question de passer par toutes les solutions et les tester une à une, dans ce TP nous nous intéresserons plus particulièrement aux algortihmes/methodes suivant(es) :  
+\subsubsection{Par prodonfeur d'abord (DFS)}\label{DFSdef}
+\paragraph{}
+L'algorithme de parcours en profondeur d'abord consiste à visité un noeud de départ (souvent appelé \textbf{racine}), puis visite le premier sommet voisin(ou \textbf{successeur}) jusqu'à ce qu'une profondeur limite soit atteinte ou bien qu'il n'y ait plus de voisin à developper, une variante de cet algorithme utilise deux ensemble \textbf{Open} et \textbf{Closed} qui représentent réspectivement l'ensemble des noeuds du graphe qui n'ont pas encore étés developpés et ceux déjà développés, cet ajout permet à l'algorithme d'éviter de boucler indéfiniment sur un ensemble de noeuds.
+\begin{itemize}
+	\item Complexité temporelle : $O(2^{N})$
+	\item Complexité spatiale : $O(2m)$ avec $m$=nombre de litéraux 
+\end{itemize}
+\subsubsection{En Largeur d'abord (BFS)}\label{BFSdef}
+\paragraph{}
+Cet algorithme diffère de son prédecesseur par le fait qu'il visite tous les voisins(\textbf{successeurs}) d'un noeud avant de passer au noeud suivant, ce qui revient à gérer l'ajout et la suppression de l'ensemble Open comme une file, donc en mode \textbf{FIFO} (En supposant bien sûr qu'on dispose des deux ensembles open et closed), cet approche permet de sauvegarder tous les noeuds précèdemment visité durant la recherche, ce qui peut causer un débordement de la mémoire lors de l'exécution sur machine(Ce point sera rediscuté dans \ref{BreadthIssue} page \pageref{BreadthIssue} et \ref{BreadthIssueExperience} page \pageref{BreadthIssueExperience} et \ref{BreadthIssueCompare} page \pageref{BreadthIssueCompare})
+
+\begin{itemize}
+	\item Complexité temporelle : $O(2^{N})$
+	\item Complexité spatiale : $O(2^N)$ avec $N$=nombre de litéraux 
+\end{itemize}
+\newpage
+\subsubsection{Par coût uniforme}\label{DijkstraDef}
+\paragraph{}
+Le principe est simple, au fur et à mesur que l'algorithme avance et développe des noeuds, il garde en mémoire le coût\footnote[1]{Fonction retournant le cout pour passer du noeud de départ(la racine) au noeud courant}, le noeud qui sera ensuite choisi sera celui dont le coût accumulé est le plus bas, assurant ainsi de toujours choisir le chemin le plus optimal, si le coût pour passer d'un noeud à n'importe quel autre de ses voisins est le même quelque soit le neoud, l'algorithme est alors équivalent à celui de la recherche en largeur d'abord
+\begin{itemize}
+	\item Complexité temporelle : $O(2^{N})$
+	\item Complexité spatiale : $O(2^N)$ avec $N$=nombre de litéraux  
+\end{itemize}
+\subsection{Stratégie de rercherche guidée}
+Cette catégorie englobe quant à elle les stratégies ou il est question de parcourir une plus petite partie de l'espace de recherche dans l'espoir de trouver la solution optimal en un temps plus réduit, les algortihmes sont les suivants : 
+\subsubsection{Recherche gloutonne (Greedy algorithm)}\label{GreedyDef}
+\paragraph{}
+Cet algorithme est basé sur la notion d'heuristique\footnote[1]{Une fonction d'éstimation de la distance séparant le noeud courant au but }, au lieu de parcourir de façon "naïve" l'ensemble des noeuds dans l'espace de recherche, il choisit a chaque itérration sur l'ensemble \textbf{open} le noeud le plus \textbf{prometteur} en terme de distance par rapport au but recherché.
+\begin{itemize}
+	\item Complexité temporelle : $O(2^{N})$
+	\item Complexité spatiale : $O(2^N)$ avec $N$=nombre de litéraux 
+\end{itemize}
+\subsubsection{Algorithme A*}\label{AstarDef}
+\paragraph{}
+Contrairement aux précedents algorithmes de recherche qui effectuaient une recherche de façon "naîve", l'algorithme \textbf{A* }propose une vision un peu nouvelle, il utilise la notion de coût et celle d'heuristique, la fonction d'évaluation $f$ est donc définie comme étant la somme de deux fonctions $g$ et $h$ ou : \\
+	\begin{itemize}
+		\item $g$ est la fonction  qui retourne le cout d'un noeud $n$
+		\item $h$ est la fonction  qui estime le cout d'un noeud $n$ vers le but
+	\end{itemize} 
+Le principe de l'algorithme est donc de prendre le noeud dans \textbf{open} qui possède la valeur minimal de $f$, assurant ainsi de trouver le chemin optimal \textbf{ssi.} l'heuristique $h$ choisie est consistante\footnote[2]{Ne surestime jamais le coût réel pour passer d'un nœud à un de ses successeurs}
+\begin{itemize}
+	\item Complexité temporelle : $O(2^{N})$
+	\item Complexité spatiale : $O(2^N)$ avec $N$=nombre de litéraux 
+\end{itemize}

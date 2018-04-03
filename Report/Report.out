@@ -1,0 +1,53 @@
+\BOOKMARK [-1][-]{part.1}{I Approche par espace des \351tats}{}% 1
+\BOOKMARK [0][-]{chapter.1}{Introduction : }{part.1}% 2
+\BOOKMARK [1][-]{section.1.1}{Probl\351matique : }{chapter.1}% 3
+\BOOKMARK [1][-]{section.1.2}{D\351finitions}{chapter.1}% 4
+\BOOKMARK [2][-]{subsection.1.2.1}{Probl\350me SAT}{section.1.2}% 5
+\BOOKMARK [2][-]{subsection.1.2.2}{Strat\351gie de recherche dans l'espace des \351tats}{section.1.2}% 6
+\BOOKMARK [2][-]{subsection.1.2.3}{Strat\351gie de rercherche aveugle}{section.1.2}% 7
+\BOOKMARK [2][-]{subsection.1.2.4}{Strat\351gie de rercherche guid\351e}{section.1.2}% 8
+\BOOKMARK [0][-]{chapter.2}{Impl\351mentation}{part.1}% 9
+\BOOKMARK [1][-]{section.2.1}{Structures de donn\351es}{chapter.2}% 10
+\BOOKMARK [2][-]{subsection.2.1.1}{Repr\351sentation du probl\350me SAT}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.2}{Repr\351sentation des \351tats}{section.2.1}% 12
+\BOOKMARK [2][-]{subsection.2.1.3}{D\351veloppement des \351tats}{section.2.1}% 13
+\BOOKMARK [1][-]{section.2.2}{Conception et pseudo-code}{chapter.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.1}{Gestion de la liste open}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.2}{Fonction d'\351valuation}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.3}{\311valuateur SAT}{section.2.2}% 17
+\BOOKMARK [1][-]{section.2.3}{Interface graphique}{chapter.2}% 18
+\BOOKMARK [0][-]{chapter.3}{Exp\351rimentations}{part.1}% 19
+\BOOKMARK [1][-]{section.3.1}{Donn\351s}{chapter.3}% 20
+\BOOKMARK [2][-]{subsection.3.1.1}{Format DIMACS}{section.3.1}% 21
+\BOOKMARK [2][-]{subsection.3.1.2}{Example}{section.3.1}% 22
+\BOOKMARK [2][-]{subsection.3.1.3}{Type d'instances}{section.3.1}% 23
+\BOOKMARK [1][-]{section.3.2}{Environement de travail}{chapter.3}% 24
+\BOOKMARK [2][-]{subsection.3.2.1}{Machines}{section.3.2}% 25
+\BOOKMARK [2][-]{subsection.3.2.2}{Outils utilis\351s}{section.3.2}% 26
+\BOOKMARK [1][-]{section.3.3}{R\351sultats}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.3.1}{En largeur d'abord :}{section.3.3}% 28
+\BOOKMARK [2][-]{subsection.3.3.2}{Par profondeur d'abord :}{section.3.3}% 29
+\BOOKMARK [2][-]{subsection.3.3.3}{Cout uniforme}{section.3.3}% 30
+\BOOKMARK [2][-]{subsection.3.3.4}{Recherche gloutonne}{section.3.3}% 31
+\BOOKMARK [2][-]{subsection.3.3.5}{Algorithme A*}{section.3.3}% 32
+\BOOKMARK [1][-]{section.3.4}{Statistiques}{chapter.3}% 33
+\BOOKMARK [1][-]{section.3.5}{Comparaison entres les cinq m\351thodes}{chapter.3}% 34
+\BOOKMARK [-1][-]{part.2}{II Approche par espace des solutions}{}% 35
+\BOOKMARK [0][-]{chapter.4}{Introduction : }{part.2}% 36
+\BOOKMARK [1][-]{section.4.1}{Probl\351matique : }{chapter.4}% 37
+\BOOKMARK [1][-]{section.4.2}{D\351finitions}{chapter.4}% 38
+\BOOKMARK [2][-]{subsection.4.2.1}{Espace des solutions}{section.4.2}% 39
+\BOOKMARK [2][-]{subsection.4.2.2}{Metaheuristique}{section.4.2}% 40
+\BOOKMARK [2][-]{subsection.4.2.3}{Intelligence en essaim \(Swarm intelligence\) }{section.4.2}% 41
+\BOOKMARK [2][-]{subsection.4.2.4}{Bee swarm optimization \(BSO\)}{section.4.2}% 42
+\BOOKMARK [0][-]{chapter.5}{Impl\351mentation de l'algorithme BSO pour le probl\350me SAT}{part.2}% 43
+\BOOKMARK [1][-]{section.5.1}{Structures de donn\351es}{chapter.5}% 44
+\BOOKMARK [2][-]{subsection.5.1.1}{Repr\351sentation des solutions}{section.5.1}% 45
+\BOOKMARK [2][-]{subsection.5.1.2}{}{section.5.1}% 46
+\BOOKMARK [0][-]{chapter.6}{Exp\351rimentations}{part.2}% 47
+\BOOKMARK [1][-]{section.6.1}{Donn\351es}{chapter.6}% 48
+\BOOKMARK [1][-]{section.6.2}{R\351sultats}{chapter.6}% 49
+\BOOKMARK [2][-]{subsection.6.2.1}{Pour les instances satisfiables}{section.6.2}% 50
+\BOOKMARK [2][-]{subsection.6.2.2}{Pour les instances non satisfiables}{section.6.2}% 51
+\BOOKMARK [1][-]{section.6.3}{Comparaison avec les m\351thodes de I}{chapter.6}% 52
+\BOOKMARK [0][-]{appendix.A}{Code source}{part.2}% 53

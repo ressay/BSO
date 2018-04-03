@@ -1,0 +1,145 @@
+\select@language {french}
+\contentsline {part}{I\hspace {1em}Approche par espace des \IeC {\'e}tats}{2}{part.1}
+\contentsline {chapter}{\numberline {1}Introduction : }{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}Probl\IeC {\'e}matique : }{3}{section.1.1}
+\contentsline {paragraph}{}{3}{section*.2}
+\contentsline {section}{\numberline {1.2}D\IeC {\'e}finitions}{3}{section.1.2}
+\contentsline {paragraph}{}{3}{section*.3}
+\contentsline {subsection}{\numberline {1.2.1}Probl\IeC {\`e}me SAT}{3}{subsection.1.2.1}
+\contentsline {paragraph}{}{3}{section*.4}
+\contentsline {subsection}{\numberline {1.2.2}Strat\IeC {\'e}gie de recherche dans l'espace des \IeC {\'e}tats}{4}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Strat\IeC {\'e}gie de rercherche aveugle}{4}{subsection.1.2.3}
+\contentsline {paragraph}{}{4}{section*.5}
+\contentsline {subsubsection}{Par prodonfeur d'abord (DFS)}{4}{section*.6}
+\contentsline {paragraph}{}{4}{section*.7}
+\contentsline {subsubsection}{En Largeur d'abord (BFS)}{4}{section*.8}
+\contentsline {paragraph}{}{4}{section*.9}
+\contentsline {subsubsection}{Par co\IeC {\^u}t uniforme}{5}{section*.10}
+\contentsline {paragraph}{}{5}{section*.11}
+\contentsline {subsection}{\numberline {1.2.4}Strat\IeC {\'e}gie de rercherche guid\IeC {\'e}e}{5}{subsection.1.2.4}
+\contentsline {subsubsection}{Recherche gloutonne (Greedy algorithm)}{5}{section*.12}
+\contentsline {paragraph}{}{5}{section*.13}
+\contentsline {subsubsection}{Algorithme A*}{5}{section*.14}
+\contentsline {paragraph}{}{5}{section*.15}
+\contentsline {chapter}{\numberline {2}Impl\IeC {\'e}mentation}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}Structures de donn\IeC {\'e}es}{6}{section.2.1}
+\contentsline {paragraph}{}{6}{section*.16}
+\contentsline {subsection}{\numberline {2.1.1}Repr\IeC {\'e}sentation du probl\IeC {\`e}me SAT}{6}{subsection.2.1.1}
+\contentsline {paragraph}{}{6}{section*.17}
+\contentsline {subsubsection}{Repr\IeC {\'e}sentation matricielle}{6}{section*.18}
+\contentsline {paragraph}{}{6}{section*.19}
+\contentsline {subsubsection}{Repr\IeC {\'e}sentation par \textit {Bitset}}{7}{section*.20}
+\contentsline {paragraph}{}{7}{section*.21}
+\contentsline {subsection}{\numberline {2.1.2}Repr\IeC {\'e}sentation des \IeC {\'e}tats}{7}{subsection.2.1.2}
+\contentsline {paragraph}{}{7}{section*.22}
+\contentsline {subsection}{\numberline {2.1.3}D\IeC {\'e}veloppement des \IeC {\'e}tats}{8}{subsection.2.1.3}
+\contentsline {paragraph}{}{8}{section*.23}
+\contentsline {paragraph}{Remarque1:}{8}{section*.24}
+\contentsline {paragraph}{Remarque2:}{9}{section*.25}
+\contentsline {section}{\numberline {2.2}Conception et pseudo-code}{9}{section.2.2}
+\contentsline {paragraph}{}{9}{section*.26}
+\contentsline {paragraph}{}{9}{section*.28}
+\contentsline {paragraph}{}{10}{section*.29}
+\contentsline {subsection}{\numberline {2.2.1}Gestion de la liste open}{10}{subsection.2.2.1}
+\contentsline {paragraph}{}{10}{section*.30}
+\contentsline {subsubsection}{Profondeur d'abord}{10}{section*.31}
+\contentsline {subsubsection}{Largeur d'abord}{10}{section*.32}
+\contentsline {paragraph}{}{10}{section*.33}
+\contentsline {subsubsection}{Recherche En se basant sur une fonction d'\IeC {\'e}valuation}{10}{section*.34}
+\contentsline {paragraph}{}{10}{section*.35}
+\contentsline {paragraph}{Liste tri\IeC {\'e}e}{10}{section*.36}
+\contentsline {paragraph}{Tas}{11}{section*.37}
+\contentsline {subsection}{\numberline {2.2.2}Fonction d'\IeC {\'e}valuation}{11}{subsection.2.2.2}
+\contentsline {paragraph}{}{11}{section*.38}
+\contentsline {subsubsection}{Recherche gloutonne}{11}{section*.39}
+\contentsline {paragraph}{}{11}{section*.40}
+\contentsline {subsubsection}{Recherche \IeC {\`a} co\IeC {\^u}t uniforme}{11}{section*.41}
+\contentsline {paragraph}{}{11}{section*.42}
+\contentsline {subsubsection}{Algorithme A*}{12}{section*.43}
+\contentsline {paragraph}{}{12}{section*.44}
+\contentsline {subsection}{\numberline {2.2.3}\IeC {\'E}valuateur SAT}{12}{subsection.2.2.3}
+\contentsline {paragraph}{}{12}{section*.45}
+\contentsline {subsubsection}{\IeC {\'E}valuation par matrice}{12}{section*.46}
+\contentsline {paragraph}{}{12}{section*.47}
+\contentsline {subsubsection}{\IeC {\'E}valuation par Bitset}{13}{section*.49}
+\contentsline {paragraph}{}{13}{section*.50}
+\contentsline {section}{\numberline {2.3}Interface graphique}{13}{section.2.3}
+\contentsline {paragraph}{}{13}{section*.51}
+\contentsline {paragraph}{}{13}{section*.52}
+\contentsline {paragraph}{D\IeC {\'e}tails}{14}{section*.54}
+\contentsline {paragraph}{}{14}{section*.55}
+\contentsline {chapter}{\numberline {3}Exp\IeC {\'e}rimentations}{16}{chapter.3}
+\contentsline {section}{\numberline {3.1}Donn\IeC {\'e}s}{16}{section.3.1}
+\contentsline {paragraph}{}{16}{section*.59}
+\contentsline {paragraph}{}{16}{section*.60}
+\contentsline {subsection}{\numberline {3.1.1}Format DIMACS}{16}{subsection.3.1.1}
+\contentsline {subsection}{\numberline {3.1.2}Example}{17}{subsection.3.1.2}
+\contentsline {subsection}{\numberline {3.1.3}Type d'instances}{17}{subsection.3.1.3}
+\contentsline {section}{\numberline {3.2}Environement de travail}{18}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Machines}{18}{subsection.3.2.1}
+\contentsline {paragraph}{}{18}{section*.61}
+\contentsline {subsection}{\numberline {3.2.2}Outils utilis\IeC {\'e}s}{19}{subsection.3.2.2}
+\contentsline {subsubsection}{Langage de programmation : }{19}{section*.64}
+\contentsline {paragraph}{}{19}{section*.65}
+\contentsline {subsubsection}{IDE : }{19}{section*.66}
+\contentsline {paragraph}{IntelliJ Idea}{19}{section*.67}
+\contentsline {section}{\numberline {3.3}R\IeC {\'e}sultats}{19}{section.3.3}
+\contentsline {paragraph}{}{19}{section*.68}
+\contentsline {subsection}{\numberline {3.3.1}En largeur d'abord :}{19}{subsection.3.3.1}
+\contentsline {paragraph}{}{19}{section*.69}
+\contentsline {paragraph}{Remarque :}{19}{section*.70}
+\contentsline {subsubsection}{Pour les instances satisfiables :}{20}{section*.71}
+\contentsline {paragraph}{}{20}{section*.73}
+\contentsline {subsubsection}{Pour les instances contradictoires ( non sastisfiables ) : }{21}{section*.75}
+\contentsline {subsection}{\numberline {3.3.2}Par profondeur d'abord :}{22}{subsection.3.3.2}
+\contentsline {subsubsection}{Pour les instances satisfiables :}{22}{section*.78}
+\contentsline {subsubsection}{Pour les instances contradictoires ( non sastisfiables ) : }{23}{section*.81}
+\contentsline {subsection}{\numberline {3.3.3}Cout uniforme}{24}{subsection.3.3.3}
+\contentsline {subsubsection}{Pour les instances satisfiables :}{24}{section*.84}
+\contentsline {subsubsection}{Pour les instances contradictoires ( non sastisfiables ) : }{25}{section*.87}
+\contentsline {subsection}{\numberline {3.3.4}Recherche gloutonne}{26}{subsection.3.3.4}
+\contentsline {subsubsection}{Pour les instances satisfiables :}{26}{section*.90}
+\contentsline {subsubsection}{Pour les instances contradictoires ( non sastisfiables ) : }{27}{section*.93}
+\contentsline {subsection}{\numberline {3.3.5}Algorithme A*}{28}{subsection.3.3.5}
+\contentsline {subsubsection}{Pour les instances satisfiables :}{28}{section*.96}
+\contentsline {subsubsection}{Pour les instances contradictoires ( non sastisfiables ) : }{29}{section*.99}
+\contentsline {section}{\numberline {3.4}Statistiques}{30}{section.3.4}
+\contentsline {paragraph}{}{30}{section*.102}
+\contentsline {subsubsection}{Am\IeC {\'e}liorations avec BitSet}{31}{section*.107}
+\contentsline {paragraph}{}{31}{section*.108}
+\contentsline {section}{\numberline {3.5}Comparaison entres les cinq m\IeC {\'e}thodes}{32}{section.3.5}
+\contentsline {paragraph}{}{32}{section*.109}
+\contentsline {paragraph}{}{32}{section*.110}
+\contentsline {paragraph}{}{32}{section*.111}
+\contentsline {paragraph}{}{32}{section*.112}
+\contentsline {paragraph}{}{32}{section*.113}
+\contentsline {paragraph}{}{33}{section*.115}
+\contentsline {part}{II\hspace {1em}Approche par espace des solutions}{34}{part.2}
+\contentsline {chapter}{\numberline {4}Introduction : }{35}{chapter.4}
+\contentsline {section}{\numberline {4.1}Probl\IeC {\'e}matique : }{35}{section.4.1}
+\contentsline {paragraph}{Limite des m\IeC {\'e}thodes de recherche CLASSIQUES}{35}{section*.116}
+\contentsline {section}{\numberline {4.2}D\IeC {\'e}finitions}{35}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}Espace des solutions}{35}{subsection.4.2.1}
+\contentsline {paragraph}{}{35}{section*.117}
+\contentsline {subsection}{\numberline {4.2.2}Metaheuristique}{35}{subsection.4.2.2}
+\contentsline {paragraph}{}{35}{section*.118}
+\contentsline {subsection}{\numberline {4.2.3}Intelligence en essaim (Swarm intelligence) }{35}{subsection.4.2.3}
+\contentsline {paragraph}{}{35}{section*.119}
+\contentsline {subsection}{\numberline {4.2.4}Bee swarm optimization (BSO)}{35}{subsection.4.2.4}
+\contentsline {paragraph}{}{35}{section*.120}
+\contentsline {chapter}{\numberline {5}Impl\IeC {\'e}mentation de l'algorithme BSO pour le probl\IeC {\`e}me SAT}{36}{chapter.5}
+\contentsline {section}{\numberline {5.1}Structures de donn\IeC {\'e}es}{36}{section.5.1}
+\contentsline {subsection}{\numberline {5.1.1}Repr\IeC {\'e}sentation des solutions}{36}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {5.1.2}}{36}{subsection.5.1.2}
+\contentsline {chapter}{\numberline {6}Exp\IeC {\'e}rimentations}{37}{chapter.6}
+\contentsline {section}{\numberline {6.1}Donn\IeC {\'e}es}{37}{section.6.1}
+\contentsline {paragraph}{}{37}{section*.121}
+\contentsline {section}{\numberline {6.2}R\IeC {\'e}sultats}{37}{section.6.2}
+\contentsline {paragraph}{}{37}{section*.122}
+\contentsline {subsection}{\numberline {6.2.1}Pour les instances satisfiables}{37}{subsection.6.2.1}
+\contentsline {paragraph}{}{37}{section*.123}
+\contentsline {subsection}{\numberline {6.2.2}Pour les instances non satisfiables}{37}{subsection.6.2.2}
+\contentsline {paragraph}{}{37}{section*.124}
+\contentsline {section}{\numberline {6.3}Comparaison avec les m\IeC {\'e}thodes de \ref {part1}}{37}{section.6.3}
+\contentsline {paragraph}{}{37}{section*.125}
+\contentsline {chapter}{\numberline {A}Code source}{40}{appendix.A}
