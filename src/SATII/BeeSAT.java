@@ -2,6 +2,9 @@ package SATII;
 
 import BSO.Bee;
 
+import java.util.Random;
+import java.util.concurrent.ThreadLocalRandom;
+
 /**
  * Created by ressay on 29/03/18.
  */
@@ -24,8 +27,20 @@ public class BeeSAT extends Bee<SATSolution>
         if(first)
             return searchZone;
         first = false;
-        return searchZone = SATSolution.generateRandomSolution(instance);
+        return getNextSearchZone();
     }
+
+    protected SATSolution getNextSearchZone()
+    {
+        for (int i = 0; i < searchZone.length(); i++)
+        {
+            if(ThreadLocalRandom.current().nextInt(0,3 ) == 1)
+                searchZone.flip(i);
+        }
+        return searchZone;
+    }
+
+
 
     @Override
     protected SATSolution search() {

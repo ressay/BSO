@@ -14,6 +14,7 @@ public abstract class BSOAbstract<T>
 {
     protected TabuList<T> tabuList;
     protected Dances<T> dances;
+    protected boolean didInit = false;
 
     public BSOAbstract(TabuList<T> tabuList, Dances<T> dances) {
         this.tabuList = tabuList;
@@ -36,14 +37,16 @@ public abstract class BSOAbstract<T>
 
             for(Bee<T> bee : bees)
                 dances.add( bee.search() );
-
+            int tries = 0;
             do {
                 sRef = dances.getBest();
+                tries++;
             }while (sRef != null && tabuList.contains(sRef));
-
+            didInit = false;
             if(sRef == null) {
                 sRef = beeInit.init();
-                System.out.println("sref is null!!!");
+                didInit = true;
+                System.out.println("sref is null in " + tries + " tabu list size is " + tabuList.size());
             }
 
             double evaluation = dances.evaluate(sRef);
