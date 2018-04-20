@@ -37,16 +37,13 @@ public abstract class BSOAbstract<T>
 
             for(Bee<T> bee : bees)
                 dances.add( bee.search() );
-            int tries = 0;
             do {
                 sRef = dances.getBest();
-                tries++;
             }while (sRef != null && tabuList.contains(sRef));
             didInit = false;
             if(sRef == null) {
                 sRef = beeInit.init();
                 didInit = true;
-                System.out.println("sref is null in " + tries + " tabu list size is " + tabuList.size());
             }
 
             double evaluation = dances.evaluate(sRef);

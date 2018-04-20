@@ -76,21 +76,21 @@ public class Main {
 //        System.out.println("got : "+count+"/10");
 
         new File(rootPath).mkdirs();
-        int numberOfInstances = 10;
-        int tryPerInstance = 10;
+        int numberOfInstances = 5;
+        int tryPerInstance = 5;
         Result res = createCSV(numberOfInstances, tryPerInstance);
 
     }
 
-    static String fileInst = "uf100-0";
+    static String fileInst = "uf250-0";
     //    static String fileInstPath = "UF75.325.100/";
-    static String fileInstPath = "uf100-430/";
+    static String fileInstPath = "UF250.1065.100/";
     static Result createCSV(int numberOfInstances,int tryPerInstance) throws Exception {
         double avgSat = 0;
         double avgRate = 0;
         double avgTime = 0;
         int numberOfFiles = numberOfInstances;
-        PrintWriter total = new PrintWriter(rootPath+"/"+"allDetails2.csv");
+        PrintWriter total = new PrintWriter(rootPath+"/"+"allDetails"+fileInst+".csv");
         total.write("try per instance;"+tryPerInstance+"\n\n");
         total.write(";;instance;clauses satisfied;rate;time\n");
         for (int j = 0; j < numberOfFiles; j++) {

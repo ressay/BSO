@@ -39,7 +39,7 @@ public class SATInstance
 
         int i = 0;
         while ((line = reader.readLine()) != null && i < se.getNumberOfClauses()) {
-            if(line.length()>0 && line.charAt(0) == ' ')
+            while(line.length()>0 && line.charAt(0) == ' ')
                 line = line.substring(1);
 
             String sLine[] = line.split("\\s+");
