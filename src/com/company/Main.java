@@ -9,7 +9,7 @@ import java.util.LinkedList;
 
 public class Main {
 
-    static String rootPath = "statistics2/";
+    static String rootPath = "statistics3/";
     static class parameters
     {
         int flip = 5;
@@ -76,21 +76,21 @@ public class Main {
 //        System.out.println("got : "+count+"/10");
 
         new File(rootPath).mkdirs();
-        int numberOfInstances = 5;
-        int tryPerInstance = 5;
+        int numberOfInstances = 10;
+        int tryPerInstance = 10;
         Result res = createCSV(numberOfInstances, tryPerInstance);
 
     }
 
-    static String fileInst = "uf250-0";
-    //    static String fileInstPath = "UF75.325.100/";
-    static String fileInstPath = "UF250.1065.100/";
+    static String fileInst = "uf75-0";
+        static String fileInstPath = "UF75.325.100/";
+//    static String fileInstPath = "uf200-860/";
     static Result createCSV(int numberOfInstances,int tryPerInstance) throws Exception {
         double avgSat = 0;
         double avgRate = 0;
         double avgTime = 0;
         int numberOfFiles = numberOfInstances;
-        PrintWriter total = new PrintWriter(rootPath+"/"+"allDetails"+fileInst+".csv");
+        PrintWriter total = new PrintWriter(rootPath+"/"+"allDetailsPar"+fileInst+".csv");
         total.write("try per instance;"+tryPerInstance+"\n\n");
         total.write(";;instance;clauses satisfied;rate;time\n");
         for (int j = 0; j < numberOfFiles; j++) {
@@ -104,9 +104,10 @@ public class Main {
             for (int i = 1; i <= numberOfAttempts; i++) {
                 SATSolution start = SATSolution.generateRandomSolution(instance);
                 double heat = instance.getNumberOfVariables()/2;
-                double localSearch = instance.getNumberOfVariables()/2;
+                double localSearch = instance.getNumberOfVariables()/1.8;
+                int beeSize = instance.getNumberOfVariables()/2;
                 long currentTime = System.currentTimeMillis();
-                SATSolution sol = BSOSatDynamic.searchBSOSATDynamic(instance, 1000, 30, 5,
+                SATSolution sol = BSOSatDynamic.searchBSOSATDynamic(instance, 1000, beeSize, 5,
                     (int) (localSearch), heat, 40, start);
                 long exeTime = System.currentTimeMillis()-currentTime;
                 double t = (double)exeTime/1000;

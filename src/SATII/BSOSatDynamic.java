@@ -109,6 +109,6 @@ public class BSOSatDynamic extends BSOSat
         bsoSat.maxDistance = maxDistance;
         BeeSAT bee = new BeeSAT(instance, sol,
                 maxDistance);
-        return bsoSat.search(bee);
+        return bsoSat.searchMultiThread(bee);
     }
 }
