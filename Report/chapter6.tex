@@ -1,5 +1,153 @@
 \chapter{Implémentation de l'algorithme BSO pour le problème SAT}
-	\section{Structures de données}
-	\subsection{Représentation des solutions}
-	\subsection{}
+	\section{Structures de données:}
+	\paragraph{}
+	Comme vu dans l’approche par espace des états la représentation du problème et les structures de données ont un impact considérable sur les performances de l’implémentation d’un algorithme.\\
+	Dans cette partie nous allons voir les structures de données adéquates à notre implémentation de BSO.
+	\subsection{Représentation d’instance et de solutions SAT:}
+	\paragraph{}
+	Nous allons utilisé la représentation par Bitset vu précédemment dans laquelle on représente une instance SAT en gardant pour chaque littéral les clauses qu’il satisfait dans un Bitset, et une solution SAT par un Bitset de taille égale au nombre de variables de l’instance SAT et pour chaque variable on lui associe un bit qui est met à 1 si la variable est vrai, à 0 sinon.
+	Pour résumé tout cela, soit l’instance SAT suivante:
+	\begin{flalign*}
+	x_{1} \lor \neg x_{2} \lor x_{4} \\
+	\neg x_{2} \lor x_{3} \lor x_{4} \\
+	\neg x_{1} \lor x_{2} \lor \neg x_{3}
+	\end{flalign*}
+	Et la solution suivante:\\
+	\begin{center}
+		$x_{1} \leftarrow true$, $x_{2} \leftarrow false$, $x_{3} \leftarrow true$, $x_{4} \leftarrow false $
+	\end{center}
+	
+	La représentation:\\
+	
+	\definecolor{green}{rgb}{0.5,1,0.5}
+	\begin{center}
+		\begin{tabular}{|c | c| c| c| c|}
+			\hline
+			$x_{1}$& $x_{2}$ &$x_{3}$ &$x_{4}$ \\\hline
+			1 & 0 & 1 & 0 \\\hline
+		\end{tabular}\\
+		Solution
+	\end{center}
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\begin{tabular}{|c | c| c| c|}
+			\hline
+			\rowcolor{green}
+			$x_{1}$& 1 & 0 & 0 \\\hline
+			$x_{2}$& 0 & 0 & 1 \\\hline
+			\rowcolor{green}
+			$x_{3}$& 0 & 1 & 0 \\\hline
+			$x_{4}$& 1 & 1 & 0 \\\hline
+		\end{tabular}
+	\end{minipage}
+	\hfillx
+	\begin{minipage}{0.5\textwidth}
+		\centering
+		\begin{tabular}{|c | c| c| c|}
+			\hline
+			$\neg x_{1}$& 0 & 0 & 1 \\\hline
+			\rowcolor{green}
+			$\neg x_{2}$& 1 & 1 & 0 \\\hline
+			$\neg x_{3}$& 0 & 0 & 1 \\\hline
+			\rowcolor{green}
+			$\neg x_{4}$& 0 & 0 & 0 \\\hline
+		\end{tabular}
+	\end{minipage}\\
+	\begin{center}
+		Instance
+	\end{center}
+	On peut calculer les clauses satisfaites par la solution en utilisant le or logique entre les Bitset de ses littéraux:
+	\begin{center}
+		\begin{minipage}{0.5\textwidth}
+			\centering
+			\begin{tabular}{| c| c| c|c|}
+				\hline
+				$x_{1}$& 1 & 0 & 0 \\\hline
+			\end{tabular}
+		\end{minipage}
+		\\~\\
+		OR
+		\\~\\
+		\begin{minipage}{0.5\textwidth}
+			\centering
+			\begin{tabular}{|c | c| c| c|}
+				\hline
+				$x_{3}$& 0 & 1 & 0 \\\hline
+			\end{tabular}
+		\end{minipage}
+		\\~\\
+		OR
+		\\~\\
+		\begin{minipage}{0.5\textwidth}
+			\centering
+			\begin{tabular}{| c| c| c|c|}
+				\hline
+				$\neg x_{2}$& 1 & 1 & 0 \\\hline
+			\end{tabular}
+		\end{minipage}
+		\\~\\
+		OR
+		\\~\\
+		\begin{minipage}{0.5\textwidth}
+			\centering
+			\begin{tabular}{|c | c| c| c|}
+				\hline
+				$\neg x_{4}$& 0 & 0 & 0 \\\hline
+			\end{tabular}
+		\end{minipage}
+		\begin{center}
+			
+			$\downarrow$
+			\\~\\
+			\begin{tabular}{|c | c| c| c|}
+				\hline
+				$Bitset$ résultat& 1 & 1 & 0 \\\hline
+			\end{tabular}
+		\end{center}
+	\end{center}
+	
+	
+	\subsection{La table Dance:}
+	\paragraph{}
+	Comme la plupart des méta-heuristique, BSO travaille sur une solution qu’il essaye d’améliorer à chaque itération. Une table contenant les meilleures solutions, appelée Dance, est utilisée. Nous avons opté à organiser cette table sous forme de tas, ainsi à chaque itération la racine du tas est choisie pour le traitement, suite à cela, les meilleures solutions trouvées par les abeilles à la fin de l’itération sont insérées dans la table.
+	\section{Conception et pseudo-code:}
+	\paragraph{}
+	Nous présentons dans la suite les parties essentielles constituant la méthode BSO.
+	\subsection{Algorithme de recherche:}
+	Comme expliqué précédemment, à chaque itération on essaye d’améliorer une solution initiale. L’itération commence par générer des solution équidistante de la solution initial, et pour chaque solution générée on fait une recherche locale. Ensuite, chacune des solutions trouvées localement est insérées dans la table Dance cité précédemment. L’itération suivante fera le même traitement en commençant par la meilleure solution de Dance. Cela est répété jusqu’à ce qu'on arrive à la solution optimale ou à une condition d’arrêt, nombre maximum d’itération atteint par exemple.
+	\begin{algorithm}
+		\SetAlgoLined
+		\KwResult{retourne la meilleure solution trouvée}
+		$sRef \gets $\textbf{solution aléatoire}\;
+		$meilleureSolution \gets sRef$\;
+		\While{$\neg$\textbf{fin()}}{
+			\textbf{ajouter($listeTabou$,$sRef$)}\;
+			$abeilles \gets$ \textbf{determinerRégionDeRecherche($sRef$)}\;
+			\ForEach{$abeille \in abeilles$}
+			{
+				$solutionLocale \gets$ \textbf{rechercheLocale($abeille$)}\;
+				\textbf{ajouter($Dance$,$solutionLocale$)}\;
+			}
+			$sRef \gets $\textbf{meilleureDeDance($Dance$)}\;
+			\If{$sRef > meilleure$ }{
+				$meilleureSolution \gets sRef$\;
+			}
+		}
+		\Return $meilleureSolution$\;
+		\caption{Algorithme de recherche BSO}
+	\end{algorithm}\\
+	Nous allons à présent détailler les différentes lignes de cet algorithme:
+	\begin{enumerate}
+		\item Ligne 1: Une solution aléatoire est générée.
+		\item Ligne 3: la condition d’arrêt peut être: solution optimale trouvée, nombre maximale d’itération atteint, temps limite dépassé etc.
+		\item Ligne 4: La solution sur laquelle on fait une itération est ajoutée dans une liste tabou pour éviter la stagnation dans un minimum local.
+		\item Ligne 5: On détermine les régions de recherche, représentées par des abeilles, à partir de la solution initial en utilisant un paramètre de distance = 1/flip. Cette fonction génère flip+1 solutions équidistantes ce qui va permettre par la suite de faire des recherches dans plusieurs régions différentes et ainsi augmenter les chances d’arriver à une solution optimale.
+		\item Lignes 6-9: Dans cette partie on boucle sur les abeilles en appliquant une recherche tabou sur chacune des régions. Les solutions résultats sont insérées dans la table Dance.
+		\item Ligne 10: On sélectionne la meilleure solution de la table Dance. Si l’algorithme est dans un état de stagnation, c’est à dire la meilleure solution en terme de qualité ne s’améliore pas, on choisit la meilleure solution en terme de diversité.
+	\end{enumerate}
+	\subsection{Les paramètres empiriques:}
+	Le pseudo-code si dessus utilise des paramètre tel que flip, nombre maximale d’itération globale/locale ainsi que des paramètres permettant de détecter l’état de stagnation.
+
+Nous détaillons à présent le rôle de chaque paramètre que nous montrerons par la suite comment ajuster sa valeur expérimentalement.
+	\subsection{Les paramètres dynamiques:}
 %%Amaze me here bro

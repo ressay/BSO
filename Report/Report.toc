@@ -128,18 +128,26 @@
 \contentsline {subsection}{\numberline {4.2.4}Bee swarm optimization (BSO)}{35}{subsection.4.2.4}
 \contentsline {paragraph}{}{35}{section*.120}
 \contentsline {chapter}{\numberline {5}Impl\IeC {\'e}mentation de l'algorithme BSO pour le probl\IeC {\`e}me SAT}{36}{chapter.5}
-\contentsline {section}{\numberline {5.1}Structures de donn\IeC {\'e}es}{36}{section.5.1}
-\contentsline {subsection}{\numberline {5.1.1}Repr\IeC {\'e}sentation des solutions}{36}{subsection.5.1.1}
-\contentsline {subsection}{\numberline {5.1.2}}{36}{subsection.5.1.2}
-\contentsline {chapter}{\numberline {6}Exp\IeC {\'e}rimentations}{37}{chapter.6}
-\contentsline {section}{\numberline {6.1}Donn\IeC {\'e}es}{37}{section.6.1}
-\contentsline {paragraph}{}{37}{section*.121}
-\contentsline {section}{\numberline {6.2}R\IeC {\'e}sultats}{37}{section.6.2}
-\contentsline {paragraph}{}{37}{section*.122}
-\contentsline {subsection}{\numberline {6.2.1}Pour les instances satisfiables}{37}{subsection.6.2.1}
+\contentsline {section}{\numberline {5.1}Structures de donn\IeC {\'e}es:}{36}{section.5.1}
+\contentsline {paragraph}{}{36}{section*.121}
+\contentsline {subsection}{\numberline {5.1.1}Repr\IeC {\'e}sentation d\IeC {\textquoteright }instance et de solutions SAT:}{36}{subsection.5.1.1}
+\contentsline {paragraph}{}{36}{section*.122}
+\contentsline {subsection}{\numberline {5.1.2}La table Dance:}{37}{subsection.5.1.2}
 \contentsline {paragraph}{}{37}{section*.123}
-\contentsline {subsection}{\numberline {6.2.2}Pour les instances non satisfiables}{37}{subsection.6.2.2}
+\contentsline {section}{\numberline {5.2}Conception et pseudo-code:}{37}{section.5.2}
 \contentsline {paragraph}{}{37}{section*.124}
-\contentsline {section}{\numberline {6.3}Comparaison avec les m\IeC {\'e}thodes de \ref {part1}}{37}{section.6.3}
-\contentsline {paragraph}{}{37}{section*.125}
-\contentsline {chapter}{\numberline {A}Code source}{40}{appendix.A}
+\contentsline {subsection}{\numberline {5.2.1}Algorithme de recherche:}{37}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.2.2}Les param\IeC {\`e}tres empiriques:}{39}{subsection.5.2.2}
+\contentsline {subsection}{\numberline {5.2.3}Les param\IeC {\`e}tres dynamiques:}{39}{subsection.5.2.3}
+\contentsline {chapter}{\numberline {6}Exp\IeC {\'e}rimentations}{40}{chapter.6}
+\contentsline {section}{\numberline {6.1}Donn\IeC {\'e}es}{40}{section.6.1}
+\contentsline {paragraph}{}{40}{section*.126}
+\contentsline {section}{\numberline {6.2}R\IeC {\'e}sultats}{40}{section.6.2}
+\contentsline {paragraph}{}{40}{section*.127}
+\contentsline {subsection}{\numberline {6.2.1}Pour les instances satisfiables}{40}{subsection.6.2.1}
+\contentsline {paragraph}{}{40}{section*.128}
+\contentsline {subsection}{\numberline {6.2.2}Pour les instances non satisfiables}{40}{subsection.6.2.2}
+\contentsline {paragraph}{}{40}{section*.129}
+\contentsline {section}{\numberline {6.3}Comparaison avec les m\IeC {\'e}thodes de \ref {part1}}{40}{section.6.3}
+\contentsline {paragraph}{}{40}{section*.130}
+\contentsline {chapter}{\numberline {A}Code source}{43}{appendix.A}

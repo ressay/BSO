@@ -41,13 +41,17 @@
 \BOOKMARK [2][-]{subsection.4.2.3}{Intelligence en essaim \(Swarm intelligence\) }{section.4.2}% 41
 \BOOKMARK [2][-]{subsection.4.2.4}{Bee swarm optimization \(BSO\)}{section.4.2}% 42
 \BOOKMARK [0][-]{chapter.5}{Impl\351mentation de l'algorithme BSO pour le probl\350me SAT}{part.2}% 43
-\BOOKMARK [1][-]{section.5.1}{Structures de donn\351es}{chapter.5}% 44
-\BOOKMARK [2][-]{subsection.5.1.1}{Repr\351sentation des solutions}{section.5.1}% 45
-\BOOKMARK [2][-]{subsection.5.1.2}{}{section.5.1}% 46
-\BOOKMARK [0][-]{chapter.6}{Exp\351rimentations}{part.2}% 47
-\BOOKMARK [1][-]{section.6.1}{Donn\351es}{chapter.6}% 48
-\BOOKMARK [1][-]{section.6.2}{R\351sultats}{chapter.6}% 49
-\BOOKMARK [2][-]{subsection.6.2.1}{Pour les instances satisfiables}{section.6.2}% 50
-\BOOKMARK [2][-]{subsection.6.2.2}{Pour les instances non satisfiables}{section.6.2}% 51
-\BOOKMARK [1][-]{section.6.3}{Comparaison avec les m\351thodes de I}{chapter.6}% 52
-\BOOKMARK [0][-]{appendix.A}{Code source}{part.2}% 53
+\BOOKMARK [1][-]{section.5.1}{Structures de donn\351es:}{chapter.5}% 44
+\BOOKMARK [2][-]{subsection.5.1.1}{Repr\351sentation d\220instance et de solutions SAT:}{section.5.1}% 45
+\BOOKMARK [2][-]{subsection.5.1.2}{La table Dance:}{section.5.1}% 46
+\BOOKMARK [1][-]{section.5.2}{Conception et pseudo-code:}{chapter.5}% 47
+\BOOKMARK [2][-]{subsection.5.2.1}{Algorithme de recherche:}{section.5.2}% 48
+\BOOKMARK [2][-]{subsection.5.2.2}{Les param\350tres empiriques:}{section.5.2}% 49
+\BOOKMARK [2][-]{subsection.5.2.3}{Les param\350tres dynamiques:}{section.5.2}% 50
+\BOOKMARK [0][-]{chapter.6}{Exp\351rimentations}{part.2}% 51
+\BOOKMARK [1][-]{section.6.1}{Donn\351es}{chapter.6}% 52
+\BOOKMARK [1][-]{section.6.2}{R\351sultats}{chapter.6}% 53
+\BOOKMARK [2][-]{subsection.6.2.1}{Pour les instances satisfiables}{section.6.2}% 54
+\BOOKMARK [2][-]{subsection.6.2.2}{Pour les instances non satisfiables}{section.6.2}% 55
+\BOOKMARK [1][-]{section.6.3}{Comparaison avec les m\351thodes de I}{chapter.6}% 56
+\BOOKMARK [0][-]{appendix.A}{Code source}{part.2}% 57

@@ -33,12 +33,11 @@
 \usepackage{tabularx}  % for tabularx
 % to make cells in table have decent spacing
 \usepackage{diagbox}
-
+\usepackage{color, colortbl}
 \usepackage{array}
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
-
 \lstset{
 	language=Python,                   % choix du langage (de programmation).
 	keywordstyle=\color{blue},      % choix de la couleur des mots clés.
@@ -82,4 +81,4 @@
 \listoftables
 \bibliography{biblio.bib}
 \input{appendix.tex}
-\end{document}}
+\end{document}}\grid

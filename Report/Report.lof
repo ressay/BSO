@@ -24,9 +24,9 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Algorithme de recherche principal\relax }}{40}{figure.caption.128}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Gestion de open en largeur d'abord\relax }}{41}{figure.caption.129}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Gestion de open par profondeur d'abord\relax }}{41}{figure.caption.130}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Gestion de open en tant que tas\relax }}{42}{figure.caption.131}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Chargement de l'instance depuis le fichier benchmark\relax }}{42}{figure.caption.132}
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Structure d'un noeud dans l'arborescence\relax }}{43}{figure.caption.133}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Algorithme de recherche principal\relax }}{43}{figure.caption.133}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Gestion de open en largeur d'abord\relax }}{44}{figure.caption.134}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Gestion de open par profondeur d'abord\relax }}{44}{figure.caption.135}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Gestion de open en tant que tas\relax }}{45}{figure.caption.136}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Chargement de l'instance depuis le fichier benchmark\relax }}{45}{figure.caption.137}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Structure d'un noeud dans l'arborescence\relax }}{46}{figure.caption.138}
