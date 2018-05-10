@@ -1,4 +1,4 @@
-% !TeX spellcheck = french
+% !TeX spellcheck = fr-toutesvariantes
 \documentclass[12pt]{report}
 \usepackage{longtable}
 \usepackage[table,xcdraw]{xcolor}
@@ -35,6 +35,17 @@
 \usepackage{diagbox}
 \usepackage{color, colortbl}
 \usepackage{array}
+\usepackage{tabularx} % in the preamble
+\usepackage{csvsimple}
+\usepackage{geometry}
+\geometry{
+	a4paper,
+	total={170mm,257mm},
+	left=20mm,
+	top=20mm,
+}
+\usepackage{wrapfig}
+
 \newcolumntype{L}[1]{>{\raggedright\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
 \newcolumntype{R}[1]{>{\raggedleft\let\newline\\\arraybackslash\hspace{0pt}}m{#1}}
@@ -72,11 +83,19 @@
 \input{chapter4.tex}
 %%%%%%%
 %%Include Part 2
-\part{Approche par espace des solutions}
+\part{Approche par espace des solutions BSO}
 \input{chapter5.tex}
 \input{chapter6.tex}
 \input{chapter7.tex}
-
+\part{Approche par espace des solutions ACO}
+\input{chapter8.tex}
+\input{chapter9.tex}
+\input{chapter10.tex}
+\part{Comparaisons et conclusions générale}
+\chapter{Comparaisons des trois approches}
+\chapter{Conclusion générale}
+\paragraph{}
+%Talk about the good sides of BSO and its bad sides, talk about the potential that resides in the metaheuristics and swarm intelligence.
 \listoffigures
 \listoftables
 \bibliography{biblio.bib}

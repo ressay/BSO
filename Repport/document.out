@@ -1,0 +1,18 @@
+\BOOKMARK [0][-]{part.1}{I Introduction d\351finition}{}% 1
+\BOOKMARK [0][-]{part.2}{II Exp\351rimentations}{}% 2
+\BOOKMARK [1][-]{section.1}{Bases de connaissances au format CNF}{part.2}% 3
+\BOOKMARK [2][-]{subsection.1.1}{Examples 1 :}{section.1}% 4
+\BOOKMARK [2][-]{subsection.1.2}{Examples 2 :}{section.1}% 5
+\BOOKMARK [0][-]{part.3}{III Construction et test d'une base de connaissances zoologiques}{}% 6
+\BOOKMARK [1][-]{section.2}{Langage naturel}{part.3}% 7
+\BOOKMARK [1][-]{section.3}{En logique d'ordre sifron et format .CNF}{part.3}% 8
+\BOOKMARK [1][-]{section.4}{Application du ubcsat sur le fichier zoo.cnf}{part.3}% 9
+\BOOKMARK [1][-]{section.5}{Test sur un fichier Benchmark}{part.3}% 10
+\BOOKMARK [2][-]{subsection.5.1}{uf250-1065 : }{section.5}% 11
+\BOOKMARK [2][-]{subsection.5.2}{uuf250-1065 : }{section.5}% 12
+\BOOKMARK [2][-]{subsection.5.3}{Commentaires : }{section.5}% 13
+\BOOKMARK [0][-]{part.4}{IV Simulation d'un moteur d'inf\351rence}{}% 14
+\BOOKMARK [1][-]{section.6}{Probl\351matique}{part.4}% 15
+\BOOKMARK [1][-]{section.7}{Impl\351mentation machine}{part.4}% 16
+\BOOKMARK [1][-]{section.8}{Fonctionnement interne}{part.4}% 17
+\BOOKMARK [1][-]{section.9}{Test du mini moteur d'inf\351rence}{part.4}% 18

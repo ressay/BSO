@@ -8,8 +8,8 @@ import java.io.PrintWriter;
 public class Main {
 
     static String rootPath = "statistics/";
-    static class parameters
-    {
+
+    static class parameters {
         int flip = 5;
         int maxIterations = 100;
         int numberOfBees = 20;
@@ -23,17 +23,15 @@ public class Main {
             this.numberOfBees = numberOfBees;
             this.maxChances = maxChances;
             this.maxLocalSearch = maxLocalSearch;
-            path = rootPath+"params"+maxIterations+"."+flip+"."+maxLocalSearch+"."+maxChances;
+            path = rootPath + "params" + maxIterations + "." + flip + "." + maxLocalSearch + "." + maxChances;
         }
 
-        void createDirectory()
-        {
+        void createDirectory() {
             new File(path).mkdirs();
         }
     }
 
-    static class Result
-    {
+    static class Result {
         double averageSat;
         double averageRate;
         double averageTime;
@@ -64,20 +62,20 @@ public class Main {
         new File(rootPath).mkdirs();
         int numberOfInstances = 10;
         int tryPerInstance = 10;
-        PrintWriter writer = new PrintWriter(rootPath+"stats.csv");
-        writer.write("number of instances per parameter;"+numberOfInstances+"\n");
-        writer.write("try per instance;"+tryPerInstance+"\n\n\n");
+        PrintWriter writer = new PrintWriter(rootPath + "stats.csv");
+        writer.write("number of instances per parameter;" + numberOfInstances + "\n");
+        writer.write("try per instance;" + tryPerInstance + "\n\n\n");
         writer.write("maxIterations;flip;number of bees;maxChances;local searches;average sat;average rate;average time (s)\n");
-        int numberOfBees = 100;
-        for(int flip = 3;flip <= 15;flip+=2) {
-            for (int maxIterations = 100; maxIterations <= 1000; maxIterations += 100) {
-                for (int maxChances = 2; maxChances <= 14; maxChances += 2) {
-                    for (int maxLocalSearch = 10; maxLocalSearch <= 100; maxLocalSearch += 5) {
+        int numberOfBees = 30;
+        for (int flip = 5; flip <= 9; flip += 2) {
+            for (int maxIterations = 400; maxIterations <= 1000; maxIterations += 300) {
+                for (int maxChances = 7; maxChances <= 12; maxChances += 2) {
+                    for (int maxLocalSearch = 15; maxLocalSearch <= 30; maxLocalSearch += 5) {
 
                         parameters params = new parameters(flip, maxIterations, numberOfBees, maxChances, maxLocalSearch);
                         Result res = createCSV(params, numberOfInstances, tryPerInstance);
                         writer.write(maxIterations + ";" + flip + ";" + numberOfBees + ";" + maxChances + ";" + maxLocalSearch
-                                + ";" + res.averageSat + ";" + res.averageRate + ";"+res.averageTime+ "\n");
+                                + ";" + res.averageSat + ";" + res.averageRate + ";" + res.averageTime + "\n");
                     }
                 }
             }
@@ -85,7 +83,7 @@ public class Main {
         writer.close();
     }
 
-    static Result createCSV(parameters params,int numberOfInstances,int tryPerInstance) throws Exception {
+    static Result createCSV(parameters params, int numberOfInstances, int tryPerInstance) throws Exception {
         int flip = params.flip;
         int maxIterations = params.maxIterations;
         int numberOfBees = params.numberOfBees;
@@ -97,17 +95,17 @@ public class Main {
         params.createDirectory();
         String path = params.path;
         int numberOfFiles = numberOfInstances;
-        PrintWriter total = new PrintWriter(path+"/"+"allDetails.csv");
-        total.write("try per instance;"+tryPerInstance+"\n\n");
+        PrintWriter total = new PrintWriter(path + "/" + "allDetails.csv");
+        total.write("try per instance;" + tryPerInstance + "\n\n");
         total.write("maxIterations;flip;number of bees;maxChances;local searches\n");
-        total.write( maxIterations + ";" + flip + ";" + numberOfBees + ";" + maxChances + ";" + maxLocalSearch + "\n\n\n");
+        total.write(maxIterations + ";" + flip + ";" + numberOfBees + ";" + maxChances + ";" + maxLocalSearch + "\n\n\n");
         total.write(";;instance;clauses satisfied;rate;time\n");
         for (int j = 0; j < numberOfFiles; j++) {
-            String fileName = "uf75-0"+(j+1)+".cnf";
-            String file = "uf75-0"+(j+1);
-            PrintWriter writer = new PrintWriter(path+"/"+file+"details.csv");
+            String fileName = "uf75-0" + (j + 1) + ".cnf";
+            String file = "uf75-0" + (j + 1);
+            PrintWriter writer = new PrintWriter(path + "/" + file + "details.csv");
 
-            SATInstance instance = SATInstance.loadClausesFromDimacs("UF75.325.100/" + fileName);
+            SATInstance instance = SATInstance.loadClausesFromDimacs("Benchmarks/UF75.325.100/" + fileName);
 
             writer.write("instance;maxIterations;flip;number of bees;maxChances;local searches\n");
             writer.write(file + ";" + maxIterations + ";" + flip + ";" + numberOfBees + ";" + maxChances + ";" + maxLocalSearch + "\n\n\n");
@@ -121,21 +119,21 @@ public class Main {
                 long currentTime = System.currentTimeMillis();
                 SATSolution sol = BSOSat.searchBSOSAT(instance, maxIterations, flip, numberOfBees,
                         maxChances, maxLocalSearch, start);
-                long exeTime = System.currentTimeMillis()-currentTime;
-                double t = (double)exeTime/1000;
+                long exeTime = System.currentTimeMillis() - currentTime;
+                double t = (double) exeTime / 1000;
                 int sat = instance.getNumberOfClausesSatisfied(sol);
-                double rate = (double)sat/instance.getNumberOfClauses();
-                writer.write(";;"+i+";"+sat+";"+rate+";"+t+"\n");
+                double rate = (double) sat / instance.getNumberOfClauses();
+                writer.write(";;" + i + ";" + sat + ";" + rate + ";" + t + "\n");
                 sumRate += rate;
                 sumSat += sat;
                 sumTime += t;
             }
             sumRate /= numberOfAttempts;
             sumSat /= numberOfAttempts;
-            sumTime /=numberOfAttempts;
-            writer.write(";;average;"+sumSat+";"+sumRate+";"+sumTime+"\n");
+            sumTime /= numberOfAttempts;
+            writer.write(";;average;" + sumSat + ";" + sumRate + ";" + sumTime + "\n");
             writer.close();
-            total.write(";;"+file+";"+sumSat+";"+sumRate+";"+sumTime+"\n");
+            total.write(";;" + file + ";" + sumSat + ";" + sumRate + ";" + sumTime + "\n");
             avgSat += sumSat;
             avgRate += sumRate;
             avgTime += sumTime;
@@ -144,6 +142,6 @@ public class Main {
         avgRate /= numberOfFiles;
         avgTime /= numberOfFiles;
         total.close();
-        return new Result(avgSat,avgRate,avgTime);
+        return new Result(avgSat, avgRate, avgTime);
     }
 }

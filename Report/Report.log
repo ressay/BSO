@@ -1,11 +1,11 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.10.18)  10 MAY 2018 14:45
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2018.1.3)  11 MAY 2018 00:46
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
 **Report.tex
 (./Report.tex
 LaTeX2e <2016/02/01>
-Babel <3.9q> and hyphenation patterns for 81 language(s) loaded.
+Babel <3.9q> and hyphenation patterns for 5 language(s) loaded.
 (/usr/share/texlive/texmf-dist/tex/latex/base/report.cls
 Document Class: report 2014/09/29 v1.4h Standard LaTeX document class
 (/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
@@ -1478,53 +1478,80 @@ Package: fp-eval 1995/04/03
 \diagbox@outsepl=\dimen310
 \diagbox@outsepr=\dimen311
 )
+(/usr/share/texlive/texmf-dist/tex/latex/csvsimple/csvsimple.sty
+Package: csvsimple 2014/07/14 version 1.12 LaTeX CSV file processing
+\csv@file=\read2
+\c@csvinputline=\count289
+\c@csvrow=\count290
+\c@csvcol=\count291
+\csv@out=\write4
+)
+
+Package geometry Warning: Over-specification in `v'-direction.
+    `height' (731.23582pt) is ignored.
+
 (/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) (./Report.aux)
+) (./Report.aux
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+
+LaTeX Warning: Label `my-label' multiply defined.
+
+)
 \openout1 = `Report.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 56.
-LaTeX Font Info:    ... okay on input line 56.
-LaTeX Font Info:    Try loading font information for T1+bch on input line 56.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1bch.fd
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 67.
+LaTeX Font Info:    ... okay on input line 67.
+LaTeX Font Info:    Try loading font information for T1+bch on input line 67.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1bch.fd
 File: t1bch.fd 2004/10/18 font definitions for T1/bch.
 )
 (/usr/share/texlive/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count289
+\scratchcounter=\count292
 \scratchdimen=\dimen312
 \scratchbox=\box99
-\nofMPsegments=\count290
-\nofMParguments=\count291
+\nofMPsegments=\count293
+\nofMParguments=\count294
 \everyMPshowfont=\toks61
-\MPscratchCnt=\count292
+\MPscratchCnt=\count295
 \MPscratchDim=\dimen313
-\MPnumerator=\count293
-\makeMPintoPDFobject=\count294
+\MPnumerator=\count296
+\makeMPintoPDFobject=\count297
 \everyMPtoPDFconversion=\toks62
 )
-LaTeX Info: Redefining \degres on input line 56.
-LaTeX Info: Redefining \dots on input line 56.
+LaTeX Info: Redefining \degres on input line 67.
+LaTeX Info: Redefining \dots on input line 67.
 Package frenchb.ldf Info: Setting StandardItemizeEnv=true for
 (frenchb.ldf)             compatibility with enumitem package,
-(frenchb.ldf)              on input line 56.
+(frenchb.ldf)              on input line 67.
 Package frenchb.ldf Info: Setting StandardEnumerateEnv=true for
 (frenchb.ldf)             compatibility with enumitem package,
-(frenchb.ldf)              on input line 56.
-LaTeX Info: Redefining \up on input line 56.
+(frenchb.ldf)              on input line 67.
+LaTeX Info: Redefining \up on input line 67.
  (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
 
@@ -1541,7 +1568,7 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 \AtBeginShipoutBox=\box100
-Package hyperref Info: Link coloring ON on input line 56.
+Package hyperref Info: Link coloring ON on input line 67.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -1549,15 +1576,15 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count295
+\c@section@level=\count298
 )
-LaTeX Info: Redefining \ref on input line 56.
-LaTeX Info: Redefining \pageref on input line 56.
-LaTeX Info: Redefining \nameref on input line 56.
+LaTeX Info: Redefining \ref on input line 67.
+LaTeX Info: Redefining \pageref on input line 67.
+LaTeX Info: Redefining \nameref on input line 67.
 
 (./Report.out) (./Report.out)
-\@outlinefile=\write4
-\openout4 = `Report.out'.
+\@outlinefile=\write5
+\openout5 = `Report.out'.
 
 
 *geometry* driver: auto-detecting
@@ -1568,15 +1595,15 @@ LaTeX Info: Redefining \nameref on input line 56.
 * layout: <same size as paper>
 * layoutoffset:(h,v)=(0.0pt,0.0pt)
 * modes: 
-* h-part:(L,W,R)=(85.35826pt, 426.79134pt, 85.35828pt)
-* v-part:(T,H,B)=(71.13188pt, 702.78308pt, 71.13188pt)
+* h-part:(L,W,R)=(56.9055pt, 483.69684pt, 56.90553pt)
+* v-part:(T,H,B)=(56.9055pt, 717.00946pt, 71.13188pt)
 * \paperwidth=597.50787pt
 * \paperheight=845.04684pt
-* \textwidth=426.79134pt
-* \textheight=702.78308pt
-* \oddsidemargin=13.08827pt
-* \evensidemargin=13.08827pt
-* \topmargin=-38.1381pt
+* \textwidth=483.69684pt
+* \textheight=717.00946pt
+* \oddsidemargin=-15.36449pt
+* \evensidemargin=-15.36449pt
+* \topmargin=-52.36449pt
 * \headheight=12.0pt
 * \headsep=25.0pt
 * \topskip=12.0pt
@@ -1603,64 +1630,64 @@ Package: lscape 2000/10/22 v3.01 Landscape Pages (DPC)
 Package pdflscape Info: Auto-detected driver: pdftex on input line 80.
 )
 ABD: EveryShipout initializing macros
-\c@lstlisting=\count296
+\c@lstlisting=\count299
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
 
-<Page_garde.pdf, id=236, 597.50829pt x 845.0471pt>
+<Page_garde.pdf, id=304, 597.50829pt x 845.0471pt>
 File: Page_garde.pdf Graphic file (type pdf)
  <use Page_garde.pdf>
-Package pdftex.def Info: Page_garde.pdf used on input line 58.
+Package pdftex.def Info: Page_garde.pdf used on input line 69.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Page_garde.pdf Graphic file (type pdf)
 
 <use Page_garde.pdf>
-Package pdftex.def Info: Page_garde.pdf used on input line 58.
+Package pdftex.def Info: Page_garde.pdf used on input line 69.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 
-<Page_garde.pdf, id=239, page=1, 597.50829pt x 845.0471pt>
+<Page_garde.pdf, id=307, page=1, 597.50829pt x 845.0471pt>
 File: Page_garde.pdf Graphic file (type pdf)
 
 <use Page_garde.pdf, page 1>
-Package pdftex.def Info: Page_garde.pdf, page1 used on input line 58.
+Package pdftex.def Info: Page_garde.pdf, page1 used on input line 69.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
 File: Page_garde.pdf Graphic file (type pdf)
  <use Page_garde.pdf, page 1>
-Package pdftex.def Info: Page_garde.pdf, page1 used on input line 58.
+Package pdftex.def Info: Page_garde.pdf, page1 used on input line 69.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Page_garde.pdf Graphic file (type pdf)
 
 <use Page_garde.pdf, page 1>
-Package pdftex.def Info: Page_garde.pdf, page1 used on input line 58.
+Package pdftex.def Info: Page_garde.pdf, page1 used on input line 69.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Page_garde.pdf Graphic file (type pdf)
  <use Page_garde.pdf, page 1>
-Package pdftex.def Info: Page_garde.pdf, page1 used on input line 58.
+Package pdftex.def Info: Page_garde.pdf, page1 used on input line 69.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 File: Page_garde.pdf Graphic file (type pdf)
 
 <use Page_garde.pdf, page 1>
-Package pdftex.def Info: Page_garde.pdf, page1 used on input line 58.
+Package pdftex.def Info: Page_garde.pdf, page1 used on input line 69.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [1
 
  <./Page_garde.pdf{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}>] (./Repo
 rt.toc [2
 
-])
-\tf@toc=\write5
-\openout5 = `Report.toc'.
+] [3])
+\tf@toc=\write6
+\openout6 = `Report.toc'.
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.62 \newpage
+l.73 \newpage
               [1]pdfTeX warning (ext4): destination with the same identifier (n
 ame{page.2}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.65 \part{Approche par espace des Ã©tats}
+l.76 \part{Approche par espace des Ã©tats}
                                           \label{part1} [2
 
 ] (./chapter1.tex
@@ -1668,21 +1695,27 @@ Chapitre 1.
 
 LaTeX Warning: Citation `cook' on page 3 undefined on input line 11.
 
-[3
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.12 \newpage
+              [3
 
 ]
-Overfull \hbox (4.65701pt too wide) in paragraph at lines 14--15
-[]\T1/bch/m/n/12 En co-si-dé-rant l'es-pace de re-cherche comme étant une ar-bo
--res-cence, dont les noeuds
- []
-
 LaTeX Font Info:    Try loading font information for OMS+bch on input line 21.
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsbch.fd
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/omsbch.fd
 File: omsbch.fd 
 )
 LaTeX Font Info:    Font shape `OMS/bch/m/n' in size <12> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 21.
- [4]
+
+Overfull \hbox (8.7105pt too wide) in paragraph at lines 26--27
+ [][] \T1/bch/m/n/12 Cet al-go-rithme dif-fère de son pré-de-ces-seur par le fa
+it qu'il vi-site tous les voi-sins(\T1/bch/b/n/12 successeurs\T1/bch/m/n/12 )
+ []
+
+[4]
 Underfull \hbox (badness 10000) in paragraph at lines 51--53
 
  []
@@ -1690,7 +1723,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 51--53
 ) [5] (./chapter2.tex
 Chapitre 2.
 
-Overfull \hbox (18.05899pt too wide) in paragraph at lines 28--28
+Overfull \hbox (6.67807pt too wide) in paragraph at lines 28--28
 [][] 
  []
 
@@ -1721,17 +1754,17 @@ Underfull \hbox (badness 10000) in paragraph at lines 134--135
 
  []
 
-[8]
+
 Underfull \hbox (badness 10000) in paragraph at lines 135--136
 
  []
 
-
+[8]
 Underfull \hbox (badness 10000) in paragraph at lines 187--188
 
  []
 
-[9] [10]
+[9]
 Underfull \hbox (badness 10000) in paragraph at lines 301--321
 
  []
@@ -1741,8 +1774,8 @@ Underfull \hbox (badness 10000) in paragraph at lines 301--321
 
  []
 
-[11]
-Overfull \hbox (17.06401pt too wide) in paragraph at lines 336--351
+[10] [11]
+Overfull \hbox (17.06403pt too wide) in paragraph at lines 336--351
 []$[]$ $\OMS/cmsy/m/n/12 !$ $[]$ 
  []
 
@@ -1755,28 +1788,28 @@ See the caption package documentation for explanation.
 LaTeX Warning: Reference `fig:mainWindow' on page 13 undefined on input line 39
 5.
 
-<images/imgs/interface.png, id=494, 734.745pt x 609.27625pt>
+<images/imgs/interface.png, id=582, 734.745pt x 609.27625pt>
 File: images/imgs/interface.png Graphic file (type png)
 
 <use images/imgs/interface.png>
 Package pdftex.def Info: images/imgs/interface.png used on input line 397.
-(pdftex.def)             Requested size: 426.79134pt x 353.91968pt.
+(pdftex.def)             Requested size: 483.69684pt x 401.11021pt.
  [13 <./images/imgs/interface.png>]
-<images/imgs/attemptsChart.png, id=506, 544.0325pt x 417.56pt>
+<images/imgs/attemptsChart.png, id=594, 544.0325pt x 417.56pt>
 File: images/imgs/attemptsChart.png Graphic file (type png)
 
 <use images/imgs/attemptsChart.png>
 Package pdftex.def Info: images/imgs/attemptsChart.png used on input line 415.
 (pdftex.def)             Requested size: 272.01558pt x 208.77948pt.
 
-<images/imgs/XYChart.png, id=507, 549.05125pt x 421.575pt>
+<images/imgs/XYChart.png, id=595, 549.05125pt x 421.575pt>
 File: images/imgs/XYChart.png Graphic file (type png)
 
 <use images/imgs/XYChart.png>
 Package pdftex.def Info: images/imgs/XYChart.png used on input line 421.
 (pdftex.def)             Requested size: 274.52495pt x 210.78697pt.
 
-<images/imgs/frequenciesChart.png, id=508, 541.02126pt x 414.54875pt>
+<images/imgs/frequenciesChart.png, id=596, 541.02126pt x 414.54875pt>
 File: images/imgs/frequenciesChart.png Graphic file (type png)
 
 <use images/imgs/frequenciesChart.png>
@@ -1789,12 +1822,6 @@ ges/imgs/frequenciesChart.png>]
 Chapitre 3.
 
 LaTeX Warning: Citation `Benchmark' on page 16 undefined on input line 5.
-
-
-Overfull \hbox (11.78464pt too wide) in paragraph at lines 5--6
- [][] \T1/bch/m/n/12 Les ins-tances nous sont pré-sen-tées sous forme de fi-chi
-ers au for-mat \T1/bch/b/n/12 DI-MACS[][][]\T1/bch/m/n/12 (plus
- []
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 7--9
@@ -1824,14 +1851,14 @@ LaTeX Warning: Citation `Benchmark' on page 18 undefined on input line 42.
 
 LaTeX Warning: Citation `Benchmark' on page 18 undefined on input line 42.
 
-<images/machineWISS.png, id=550, 474.77374pt x 314.17375pt>
+<images/machineWISS.png, id=638, 474.77374pt x 314.17375pt>
 File: images/machineWISS.png Graphic file (type png)
 
 <use images/machineWISS.png>
 Package pdftex.def Info: images/machineWISS.png used on input line 45.
 (pdftex.def)             Requested size: 356.07944pt x 235.62973pt.
 
-<images/machineYASSER.png, id=551, 533.995pt x 367.3725pt>
+<images/machineYASSER.png, id=639, 533.995pt x 367.3725pt>
 File: images/machineYASSER.png Graphic file (type png)
 
 <use images/machineYASSER.png>
@@ -1847,12 +1874,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 92--93
 
  []
 
-<images/BFSUF75Graph.png, id=579, 445.03105pt x 254.84685pt>
+<images/BFSUF75Graph.png, id=666, 445.03105pt x 254.84685pt>
 File: images/BFSUF75Graph.png Graphic file (type png)
 
 <use images/BFSUF75Graph.png>
 Package pdftex.def Info: images/BFSUF75Graph.png used on input line 95.
-(pdftex.def)             Requested size: 426.79134pt x 244.41687pt.
+(pdftex.def)             Requested size: 483.69684pt x 277.00371pt.
 
 
 Package caption Warning: \label without proper reference on input line 75.
@@ -1871,12 +1898,12 @@ LaTeX Warning: Reference `table:Tab_BFS_Sat' on page 20 undefined on input line
  96.
 
 [20 <./images/BFSUF75Graph.png>]
-<images/BFSUUF75Graph.png, id=591, 444.08014pt x 249.14131pt>
+<images/BFSUUF75Graph.png, id=678, 444.08014pt x 249.14131pt>
 File: images/BFSUUF75Graph.png Graphic file (type png)
 
 <use images/BFSUUF75Graph.png>
 Package pdftex.def Info: images/BFSUUF75Graph.png used on input line 122.
-(pdftex.def)             Requested size: 426.79134pt x 239.45045pt.
+(pdftex.def)             Requested size: 483.69684pt x 271.37616pt.
 
 
 Package caption Warning: \label without proper reference on input line 104.
@@ -1895,77 +1922,82 @@ LaTeX Warning: Reference `table:Tab_BFS_Non_Sat' on page 21 undefined on input
 line 123.
 
 [21 <./images/BFSUUF75Graph.png>]
-<images/DFSUF75Graph.png, id=602, 458.34395pt x 265.30698pt>
+Overfull \hbox (2.84254pt too wide) in paragraph at lines 128--129
+[]\T1/bch/m/n/12 Les ré-sul-tats sont pré-sen-tés d'abord sous forme de tables 
+puis illus-trés dans des his-to-grammes : 
+ []
+
+<images/DFSUF75Graph.png, id=689, 458.34395pt x 265.30698pt>
 File: images/DFSUF75Graph.png Graphic file (type png)
 
 <use images/DFSUF75Graph.png>
 Package pdftex.def Info: images/DFSUF75Graph.png used on input line 152.
-(pdftex.def)             Requested size: 426.79134pt x 247.0568pt.
+(pdftex.def)             Requested size: 483.69684pt x 279.99742pt.
 
-<images/DFSUUF75Graph.png, id=605, 443.12921pt x 251.04315pt>
+<images/DFSUUF75Graph.png, id=692, 443.12921pt x 251.04315pt>
 File: images/DFSUUF75Graph.png Graphic file (type png)
 
 <use images/DFSUUF75Graph.png>
 Package pdftex.def Info: images/DFSUUF75Graph.png used on input line 180.
-(pdftex.def)             Requested size: 426.79134pt x 241.78778pt.
+(pdftex.def)             Requested size: 483.69684pt x 274.02615pt.
  [22 <./images/DFSUF75Graph.png>] [23 <./images/DFSUUF75Graph.png>]
-<images/UniformCostUF75Graph.png, id=625, 461.19672pt x 258.65053pt>
+<images/UniformCostUF75Graph.png, id=713, 461.19672pt x 258.65053pt>
 File: images/UniformCostUF75Graph.png Graphic file (type png)
 
 <use images/UniformCostUF75Graph.png>
 Package pdftex.def Info: images/UniformCostUF75Graph.png used on input line 210
 .
-(pdftex.def)             Requested size: 426.79134pt x 239.35849pt.
+(pdftex.def)             Requested size: 483.69684pt x 271.27138pt.
 
-<images/UniformCostUUF75Graph.png, id=628, 446.93289pt x 251.04315pt>
+<images/UniformCostUUF75Graph.png, id=716, 446.93289pt x 251.04315pt>
 File: images/UniformCostUUF75Graph.png Graphic file (type png)
 
 <use images/UniformCostUUF75Graph.png>
 Package pdftex.def Info: images/UniformCostUUF75Graph.png used on input line 23
 8.
-(pdftex.def)             Requested size: 426.79134pt x 239.74223pt.
+(pdftex.def)             Requested size: 483.69684pt x 271.70863pt.
  [24 <./images/UniformCostUF75Graph.png>] [25 <./images/UniformCostUUF75Graph.p
 ng>]
-<images/GreedyUF75Graph.png, id=647, 461.19672pt x 258.65053pt>
+<images/GreedyUF75Graph.png, id=735, 461.19672pt x 258.65053pt>
 File: images/GreedyUF75Graph.png Graphic file (type png)
 
 <use images/GreedyUF75Graph.png>
 Package pdftex.def Info: images/GreedyUF75Graph.png used on input line 271.
-(pdftex.def)             Requested size: 426.79134pt x 239.35849pt.
+(pdftex.def)             Requested size: 483.69684pt x 271.27138pt.
 File: images/UniformCostUUF75Graph.png Graphic file (type png)
  <use images/UniformCostUUF75Graph.png>
 Package pdftex.def Info: images/UniformCostUUF75Graph.png used on input line 29
 9.
-(pdftex.def)             Requested size: 426.79134pt x 239.74223pt.
+(pdftex.def)             Requested size: 483.69684pt x 271.70863pt.
 
 [26 <./images/GreedyUF75Graph.png>] [27]
-<images/AstarUF75Graph.png, id=667, 461.19672pt x 257.6996pt>
+<images/AstarUF75Graph.png, id=755, 461.19672pt x 257.6996pt>
 File: images/AstarUF75Graph.png Graphic file (type png)
 
 <use images/AstarUF75Graph.png>
 Package pdftex.def Info: images/AstarUF75Graph.png used on input line 332.
-(pdftex.def)             Requested size: 426.79134pt x 238.47849pt.
+(pdftex.def)             Requested size: 483.69684pt x 270.27405pt.
 
-<images/AstarUUF75Graph.png, id=670, 460.24579pt x 257.6996pt>
+<images/AstarUUF75Graph.png, id=758, 460.24579pt x 257.6996pt>
 File: images/AstarUUF75Graph.png Graphic file (type png)
 
 <use images/AstarUUF75Graph.png>
 Package pdftex.def Info: images/AstarUUF75Graph.png used on input line 360.
-(pdftex.def)             Requested size: 426.79134pt x 238.97787pt.
+(pdftex.def)             Requested size: 483.69684pt x 270.84421pt.
  [28 <./images/AstarUF75Graph.png>] [29 <./images/AstarUUF75Graph.png>]
-<images/CompareUF75.png, id=690, 543.92685pt x 319.50948pt>
+<images/CompareUF75.png, id=778, 543.92685pt x 319.50948pt>
 File: images/CompareUF75.png Graphic file (type png)
 
 <use images/CompareUF75.png>
 Package pdftex.def Info: images/CompareUF75.png used on input line 385.
-(pdftex.def)             Requested size: 426.79134pt x 250.70824pt.
+(pdftex.def)             Requested size: 483.69684pt x 284.13828pt.
  [30 <./images/CompareUF75.png>]
-<images/CompareUUF75.png, id=702, 543.92685pt x 319.50948pt>
+<images/CompareUUF75.png, id=789, 543.92685pt x 319.50948pt>
 File: images/CompareUUF75.png Graphic file (type png)
 
 <use images/CompareUUF75.png>
 Package pdftex.def Info: images/CompareUUF75.png used on input line 409.
-(pdftex.def)             Requested size: 426.79134pt x 250.70824pt.
+(pdftex.def)             Requested size: 483.69684pt x 284.13828pt.
 
 
 Package caption Warning: The option `hypcap=true' will be ignored for this
@@ -1979,9 +2011,28 @@ See the caption package documentation for explanation.
 ]
 (./chapter5.tex
 Chapitre 4.
-) (./chapter6.tex [35
+<images/solutionSpace.jpg, id=831, 640.3925pt x 360.34625pt>
+File: images/solutionSpace.jpg Graphic file (type jpg)
 
-]
+<use images/solutionSpace.jpg>
+Package pdftex.def Info: images/solutionSpace.jpg used on input line 13.
+(pdftex.def)             Requested size: 362.77263pt x 204.13486pt.
+ <images/metHeur.png, id=832, 642.4pt x 481.8pt>
+File: images/metHeur.png Graphic file (type png)
+
+<use images/metHeur.png>
+Package pdftex.def Info: images/metHeur.png used on input line 21.
+(pdftex.def)             Requested size: 160.59961pt x 120.44969pt.
+ [35
+
+ <./images/solutionSpace.jpg>]
+<images/beesSearching.png, id=841, 136.51pt x 128.14542pt>
+File: images/beesSearching.png Graphic file (type png)
+
+<use images/beesSearching.png>
+Package pdftex.def Info: images/beesSearching.png used on input line 34.
+(pdftex.def)             Requested size: 136.50966pt x 128.1451pt.
+) (./chapter6.tex [36 <./images/metHeur.png> <./images/beesSearching.png>]
 Chapitre 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 14--16
@@ -1998,49 +2049,167 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--56
 
  []
 
-[36
+[37
 
-] [37]
-Overfull \hbox (3.36212pt too wide) in paragraph at lines 144--145
-[]\T1/bch/m/n/12 Ligne 5 : On dé-ter-mine les ré-gions de re-cherche, re-pré-se
-n-tées par des abeilles,
- []
-
-[38]
+] [38] [39]
 Underfull \hbox (badness 10000) in paragraph at lines 157--159
 
  []
 
-[39]
-Underfull \hbox (badness 1205) in paragraph at lines 203--203
-[][][]\T1/bch/m/n/10 .[][]Kirkpatrick, S. ; Ge-latt Jr, C. D. ; Vec-chi, M. P. 
-(1983). "Op-ti-mi-za-tion by Si-mu-la-ted
- []
-
-<images/imgs/regions.png, id=804, 702.625pt x 702.625pt>
+[40] <images/imgs/regions.png, id=908, 702.625pt x 702.625pt>
 File: images/imgs/regions.png Graphic file (type png)
 
 <use images/imgs/regions.png>
 Package pdftex.def Info: images/imgs/regions.png used on input line 208.
 (pdftex.def)             Requested size: 245.92242pt x 245.92242pt.
 
-<images/imgs/localeSearch2.png, id=805, 702.625pt x 702.625pt>
+<images/imgs/localeSearch2.png, id=909, 702.625pt x 702.625pt>
 File: images/imgs/localeSearch2.png Graphic file (type png)
 
 <use images/imgs/localeSearch2.png>
 Package pdftex.def Info: images/imgs/localeSearch2.png used on input line 217.
 (pdftex.def)             Requested size: 245.92242pt x 245.92242pt.
- [40 <./images/imgs/regions.png>]
-<images/imgs/localeSearch.png, id=815, 702.625pt x 702.625pt>
+ [41 <./images/imgs/regions.png>]
+<images/imgs/localeSearch.png, id=919, 702.625pt x 702.625pt>
 File: images/imgs/localeSearch.png Graphic file (type png)
 
 <use images/imgs/localeSearch.png>
 Package pdftex.def Info: images/imgs/localeSearch.png used on input line 223.
 (pdftex.def)             Requested size: 245.92242pt x 245.92242pt.
- [41 <./images/imgs/localeSearch2.png>])
-(./chapter7.tex [42 <./images/imgs/localeSearch.png>]
+) (./chapter7.tex [42 <./images/imgs/localeSearch2.png> <./images/imgs/localeSe
+arch.png>]
 Chapitre 6.
-) [43
+[43
+
+] [44] [45]
+<images/uf75_uf100_jnh200.png, id=959, 652.49486pt x 284.95029pt>
+File: images/uf75_uf100_jnh200.png Graphic file (type png)
+
+<use images/uf75_uf100_jnh200.png>
+Package pdftex.def Info: images/uf75_uf100_jnh200.png used on input line 177.
+(pdftex.def)             Requested size: 483.69684pt x 211.24252pt.
+
+Overfull \hbox (34.65897pt too wide) in paragraph at lines 188--193
+ [][] 
+ []
+
+<images/parVSnonPar.png, id=960, 481.11171pt x 271.52872pt>
+File: images/parVSnonPar.png Graphic file (type png)
+
+<use images/parVSnonPar.png>
+Package pdftex.def Info: images/parVSnonPar.png used on input line 196.
+(pdftex.def)             Requested size: 483.69684pt x 272.99472pt.
+ [46 <./images/uf75_uf100_jnh200.png>]) [47 <./images/parVSnonPar.png>] [48
+
+] (./chapter8.tex
+Chapitre 7.
+
+LaTeX Warning: Reference `part2' on page 49 undefined on input line 5.
+
+<images/ants.png, id=987, 803.0pt x 602.25pt>
+File: images/ants.png Graphic file (type png)
+ <use images/ants.png>
+Package pdftex.def Info: images/ants.png used on input line 13.
+(pdftex.def)             Requested size: 200.74951pt x 150.56212pt.
+ [49
+
+])
+(./chapter9.tex [50 <./images/ants.png>]
+Chapitre 8.
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--13
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--53
+
+ []
+
+[51
+
+]
+Underfull \hbox (badness 10000) in paragraph at lines 111--141
+
+ []
+
+LaTeX Font Info:    Try loading font information for T1+cmtt on input line 165.
+
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
+File: t1cmtt.fd 2014/09/29 v2.5h Standard LaTeX font definitions
+)
+Underfull \hbox (badness 10000) in paragraph at lines 143--168
+
+ []
+
+[52] [53]
+Underfull \hbox (badness 10000) in paragraph at lines 206--207
+
+ []
+
+[54]
+Underfull \hbox (badness 10000) in paragraph at lines 223--225
+
+ []
+
+
+Overfull \hbox (2.532pt too wide) in paragraph at lines 235--270
+[]$[]$ $[]$ 
+ []
+
+
+Overfull \hbox (2.532pt too wide) in paragraph at lines 274--305
+[]$[]$ $[]$ 
+ []
+
+[55]
+Underfull \hbox (badness 10000) in paragraph at lines 346--347
+
+ []
+
+[56]
+Underfull \hbox (badness 10000) in paragraph at lines 358--360
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 370--372
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 393--395
+
+ []
+
+[57]
+Overfull \hbox (2.532pt too wide) in paragraph at lines 403--439
+[]$ $[]$ 
+ []
+
+
+Overfull \hbox (2.532pt too wide) in paragraph at lines 443--494
+[]$[]$ $[]$
+ []
+
+) (./chapter10.tex [58]
+Chapitre 9.
+) [59
+
+] [60
+
+]
+Chapitre 10.
+[61
+
+]
+Chapitre 11.
+[62
 
 ] (./Report.lof
 
@@ -2048,7 +2217,7 @@ Package caption Warning: \label without proper reference on input line 75.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table:Tab_BFS_Sat' on page 44 undefined on input line
+LaTeX Warning: Reference `table:Tab_BFS_Sat' on page 63 undefined on input line
  11.
 
 
@@ -2056,105 +2225,111 @@ Package caption Warning: \label without proper reference on input line 104.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `table:Tab_BFS_Non_Sat' on page 44 undefined on input 
+LaTeX Warning: Reference `table:Tab_BFS_Non_Sat' on page 63 undefined on input 
 line 12.
 
 )
-\tf@lof=\write6
-\openout6 = `Report.lof'.
+\tf@lof=\write7
+\openout7 = `Report.lof'.
 
- [44
+ [63
 
 ] (./Report.lot)
-\tf@lot=\write7
-\openout7 = `Report.lot'.
+\tf@lot=\write8
+\openout8 = `Report.lot'.
 
- (./Report.bbl) (./appendix.tex [45
+ (./Report.bbl) (./appendix.tex [64
 
 ]
 Annexe A.
-<images/imgs/graphSearch.png, id=913, 754.82pt x 536.0025pt>
+<images/imgs/graphSearch.png, id=1251, 754.82pt x 536.0025pt>
 File: images/imgs/graphSearch.png Graphic file (type png)
 
 <use images/imgs/graphSearch.png>
 Package pdftex.def Info: images/imgs/graphSearch.png used on input line 5.
-(pdftex.def)             Requested size: 426.79134pt x 303.0628pt.
+(pdftex.def)             Requested size: 483.69684pt x 343.47389pt.
 
-<images/imgs/BFSstorage.png, id=914, 524.96124pt x 286.06876pt>
+<images/imgs/BFSstorage.png, id=1252, 524.96124pt x 286.06876pt>
 File: images/imgs/BFSstorage.png Graphic file (type png)
 
 <use images/imgs/BFSstorage.png>
 Package pdftex.def Info: images/imgs/BFSstorage.png used on input line 11.
-(pdftex.def)             Requested size: 426.79134pt x 232.5787pt.
- [46
+(pdftex.def)             Requested size: 483.69684pt x 263.59239pt.
+ [65
 
  <./images/imgs/graphSearch.png>]
-<images/imgs/DFSStorage.png, id=920, 635.37375pt x 258.9675pt>
+<images/imgs/DFSStorage.png, id=1258, 635.37375pt x 258.9675pt>
 File: images/imgs/DFSStorage.png Graphic file (type png)
 
 <use images/imgs/DFSStorage.png>
 Package pdftex.def Info: images/imgs/DFSStorage.png used on input line 17.
-(pdftex.def)             Requested size: 426.79134pt x 173.95778pt.
+(pdftex.def)             Requested size: 483.69684pt x 197.1532pt.
 
-<images/imgs/heapStorage.png, id=921, 905.3825pt x 556.0775pt>
+<images/imgs/heapStorage.png, id=1259, 905.3825pt x 556.0775pt>
 File: images/imgs/heapStorage.png Graphic file (type png)
 
 <use images/imgs/heapStorage.png>
 Package pdftex.def Info: images/imgs/heapStorage.png used on input line 23.
-(pdftex.def)             Requested size: 426.79134pt x 262.1286pt.
- [47 <./images/imgs/BFSstorage.png> <./images/imgs/DFSStorage.png>]
-<images/imgs/loadFromDimacs.png, id=929, 943.525pt x 547.04375pt>
+(pdftex.def)             Requested size: 483.69684pt x 297.0785pt.
+ [66 <./images/imgs/BFSstorage.png> <./images/imgs/DFSStorage.png>]
+<images/imgs/loadFromDimacs.png, id=1266, 943.525pt x 547.04375pt>
 File: images/imgs/loadFromDimacs.png Graphic file (type png)
 
 <use images/imgs/loadFromDimacs.png>
 Package pdftex.def Info: images/imgs/loadFromDimacs.png used on input line 29.
-(pdftex.def)             Requested size: 426.79134pt x 247.45288pt.
+(pdftex.def)             Requested size: 483.69684pt x 280.44102pt.
 
-<images/imgs/nodeStruct.png, id=930, 565.11125pt x 507.8975pt>
+<images/imgs/nodeStruct.png, id=1267, 565.11125pt x 507.8975pt>
 File: images/imgs/nodeStruct.png Graphic file (type png)
 
 <use images/imgs/nodeStruct.png>
 Package pdftex.def Info: images/imgs/nodeStruct.png used on input line 35.
-(pdftex.def)             Requested size: 426.79134pt x 383.58815pt.
-) [48 <./images/imgs/heapStorage.png> <./images/imgs/loadFromDimacs.png>] [49 <
+(pdftex.def)             Requested size: 483.69684pt x 434.73738pt.
+) [67 <./images/imgs/heapStorage.png> <./images/imgs/loadFromDimacs.png>] [68 <
 ./images/imgs/nodeStruct.png>]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 84.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 84.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 103.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 103.
  (./Report.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 84.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 84.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 103.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 103.
 Package rerunfilecheck Info: File `Report.out' has not changed.
-(rerunfilecheck)             Checksum: 73E41121645512EA398AC3CA2FDDD840;4165.
+(rerunfilecheck)             Checksum: 24D8590EA4DF6EFCD4D8FA17B4D9C729;5433.
 
 
 LaTeX Warning: There were undefined references.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 84.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 103.
  ) 
 Here is how much of TeX's memory you used:
- 42039 strings out of 493029
- 868854 string characters out of 6136233
- 942312 words of memory out of 5000000
- 44608 multiletter control sequences out of 15000+600000
- 72438 words of font info for 66 fonts, out of 8000000 for 9000
- 1141 hyphenation exceptions out of 8191
+ 42735 strings out of 494924
+ 884213 string characters out of 6179709
+ 949432 words of memory out of 5000000
+ 44877 multiletter control sequences out of 15000+600000
+ 72978 words of font info for 68 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
  133i,19n,158p,10379b,2529s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-
-dist/fonts/type1/bitstrea/charter/bchbi8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/bitstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fonts/type
-1/bitstrea/charter/bchri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
-c/amsfonts/cm/cmmi12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsf
-onts/cm/cmmi8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm
-/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.p
-fb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/shar
-e/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/l
-m/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.pfb>
-Output written on Report.pdf (51 pages, 1168663 bytes).
+ </home/wiss/.texmf-var/fonts/pk/ljfour/jknappen/ec/ectt1200.600pk>{/usr/shar
+e/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texlive/texmf-dist
+/fonts/type1/bitstrea/charter/bchb8a.pfb></usr/share/texlive/texmf-dist/fonts/t
+ype1/bitstrea/charter/bchbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/bi
+tstrea/charter/bchr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/bitstrea/c
+harter/bchri8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/c
+m/cmex10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb>
+</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/s
+hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/te
+xlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/share/t
+exmf/fonts/type1/public/lm/lmsy10.pfb>
+Output written on Report.pdf (71 pages, 1497933 bytes).
 PDF statistics:
- 1055 PDF objects out of 1200 (max. 8388607)
- 909 compressed objects within 10 object streams
- 340 named destinations out of 1000 (max. 500000)
- 619 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1451 PDF objects out of 1728 (max. 8388607)
+ 1252 compressed objects within 13 object streams
+ 501 named destinations out of 1000 (max. 500000)
+ 785 words of extra memory for PDF output out of 10000 (max. 10000000)
 

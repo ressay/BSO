@@ -11,7 +11,7 @@ import java.util.List;
 /**
  * Created by ressay on 29/03/18.
  */
-public class BSOSat extends BSOBasic<SATSolution>
+public class    BSOSat extends BSOBasic<SATSolution>
 {
     SATInstance instance;
     protected int flip = 6;

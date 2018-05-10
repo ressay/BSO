@@ -21,15 +21,26 @@
 \contentsline {figure}{\numberline {3.13}{\ignorespaces Illustration des donn\IeC {\'e}es de la table \ref {table:stat_sat}\relax }}{30}{figure.caption.104}
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Illustration des donn\IeC {\'e}es de la table \ref {table:stat_non_sat}\relax }}{31}{figure.caption.106}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Exemple d'un espace de solution multidimensionnel\relax }}{35}{figure.caption.118}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Exemples de recherche ans l'espace des solutions selon une fonction d'\IeC {\'e}valuation\relax }}{36}{figure.caption.120}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Abeilles communiquant pour la recherche de nourriture\relax }}{36}{figure.caption.123}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Illustration des r\IeC {\'e}gions de recherche des diff\IeC {\'e}rentes it\IeC {\'e}rations\relax }}{40}{figure.caption.135}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Illustration de BSO avec un nombre de recherche locale \IeC {\'e}gale \IeC {\`a} la distance entre les solutions\relax }}{41}{figure.caption.138}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Illustration de BSO avec un nombre de recherche locale inf\IeC {\'e}rieur \IeC {\`a} la distance entre les solutions\relax }}{42}{figure.caption.139}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Illustration des r\IeC {\'e}gions de recherche des diff\IeC {\'e}rentes it\IeC {\'e}rations\relax }}{41}{figure.caption.138}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Illustration de BSO avec un nombre de recherche locale \IeC {\'e}gale \IeC {\`a} la distance entre les solutions\relax }}{42}{figure.caption.141}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Illustration de BSO avec un nombre de recherche locale inf\IeC {\'e}rieur \IeC {\`a} la distance entre les solutions\relax }}{42}{figure.caption.142}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Taux de satisfiabilit\IeC {\'e} selon la nature de l'instance\relax }}{46}{figure.caption.158}
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Apport du parall\IeC {\'e}lisme\relax }}{47}{figure.caption.162}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {7.1}{\ignorespaces Abeilles communiquant pour la recherche de nourriture\relax }}{50}{figure.caption.166}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Algorithme de recherche principal\relax }}{46}{figure.caption.148}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Gestion de open en largeur d'abord\relax }}{47}{figure.caption.149}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Gestion de open par profondeur d'abord\relax }}{47}{figure.caption.150}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Gestion de open en tant que tas\relax }}{48}{figure.caption.151}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Chargement de l'instance depuis le fichier benchmark\relax }}{48}{figure.caption.152}
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Structure d'un noeud dans l'arborescence\relax }}{49}{figure.caption.153}
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Algorithme de recherche principal\relax }}{65}{figure.caption.195}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Gestion de open en largeur d'abord\relax }}{66}{figure.caption.196}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Gestion de open par profondeur d'abord\relax }}{66}{figure.caption.197}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Gestion de open en tant que tas\relax }}{67}{figure.caption.198}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Chargement de l'instance depuis le fichier benchmark\relax }}{67}{figure.caption.199}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Structure d'un noeud dans l'arborescence\relax }}{68}{figure.caption.200}

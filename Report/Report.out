@@ -32,12 +32,12 @@
 \BOOKMARK [2][-]{subsection.3.3.5}{Algorithme A*}{section.3.3}% 32
 \BOOKMARK [1][-]{section.3.4}{Statistiques}{chapter.3}% 33
 \BOOKMARK [1][-]{section.3.5}{Comparaison entres les cinq m\351thodes}{chapter.3}% 34
-\BOOKMARK [-1][-]{part.2}{II Approche par espace des solutions}{}% 35
+\BOOKMARK [-1][-]{part.2}{II Approche par espace des solutions BSO}{}% 35
 \BOOKMARK [0][-]{chapter.4}{Introduction : }{part.2}% 36
 \BOOKMARK [1][-]{section.4.1}{Probl\351matique : }{chapter.4}% 37
 \BOOKMARK [1][-]{section.4.2}{D\351finitions}{chapter.4}% 38
 \BOOKMARK [2][-]{subsection.4.2.1}{Espace des solutions}{section.4.2}% 39
-\BOOKMARK [2][-]{subsection.4.2.2}{Metaheuristique}{section.4.2}% 40
+\BOOKMARK [2][-]{subsection.4.2.2}{M\351taheuristique}{section.4.2}% 40
 \BOOKMARK [2][-]{subsection.4.2.3}{Intelligence en essaim \(Swarm intelligence\) }{section.4.2}% 41
 \BOOKMARK [2][-]{subsection.4.2.4}{Bee swarm optimization \(BSO\)}{section.4.2}% 42
 \BOOKMARK [0][-]{chapter.5}{Impl\351mentation de l'algorithme BSO pour le probl\350me SAT}{part.2}% 43
@@ -51,7 +51,24 @@
 \BOOKMARK [0][-]{chapter.6}{Exp\351rimentations}{part.2}% 51
 \BOOKMARK [1][-]{section.6.1}{Donn\351es}{chapter.6}% 52
 \BOOKMARK [1][-]{section.6.2}{R\351sultats}{chapter.6}% 53
-\BOOKMARK [2][-]{subsection.6.2.1}{Pour les instances satisfiables}{section.6.2}% 54
-\BOOKMARK [2][-]{subsection.6.2.2}{Pour les instances non satisfiables}{section.6.2}% 55
+\BOOKMARK [2][-]{subsection.6.2.1}{BSO avec param\351trage statique }{section.6.2}% 54
+\BOOKMARK [2][-]{subsection.6.2.2}{BSO avec param\351trage dynamique }{section.6.2}% 55
 \BOOKMARK [1][-]{section.6.3}{Comparaison avec les m\351thodes de I}{chapter.6}% 56
-\BOOKMARK [0][-]{appendix.A}{Code source}{part.2}% 57
+\BOOKMARK [-1][-]{part.3}{III Approche par espace des solutions ACO}{}% 57
+\BOOKMARK [0][-]{chapter.7}{Introduction : }{part.3}% 58
+\BOOKMARK [1][-]{section.7.1}{Probl\351matique : }{chapter.7}% 59
+\BOOKMARK [1][-]{section.7.2}{D\351finitions}{chapter.7}% 60
+\BOOKMARK [2][-]{subsection.7.2.1}{Ant Colony Optimization\(ACO\)}{section.7.2}% 61
+\BOOKMARK [2][-]{subsection.7.2.2}{Ph\351romones}{section.7.2}% 62
+\BOOKMARK [0][-]{chapter.8}{Impl\351mentation des algorithmes AS/ACS pour le probl\350me SAT}{part.3}% 63
+\BOOKMARK [1][-]{section.8.1}{Structures de donn\351es:}{chapter.8}% 64
+\BOOKMARK [2][-]{subsection.8.1.1}{Repr\351sentation d\220instance et de solutions SAT:}{section.8.1}% 65
+\BOOKMARK [2][-]{subsection.8.1.2}{La table des Ph\351romones}{section.8.1}% 66
+\BOOKMARK [1][-]{section.8.2}{Conception et pseudo-code:}{chapter.8}% 67
+\BOOKMARK [2][-]{subsection.8.2.1}{AS\(Ant System\)}{section.8.2}% 68
+\BOOKMARK [2][-]{subsection.8.2.2}{ACS\(Ant Colony System\)}{section.8.2}% 69
+\BOOKMARK [0][-]{chapter.9}{h}{part.3}% 70
+\BOOKMARK [-1][-]{part.4}{IV Comparaisons et conclusions g\351n\351rale}{}% 71
+\BOOKMARK [0][-]{chapter.10}{Comparaisons des trois approches}{part.4}% 72
+\BOOKMARK [0][-]{chapter.11}{Conclusion g\351n\351rale}{part.4}% 73
+\BOOKMARK [0][-]{appendix.A}{Code source}{part.4}% 74

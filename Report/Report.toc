@@ -39,7 +39,7 @@
 \contentsline {section}{\numberline {2.2}Conception et pseudo-code}{9}{section.2.2}
 \contentsline {paragraph}{}{9}{section*.26}
 \contentsline {paragraph}{}{9}{section*.28}
-\contentsline {paragraph}{}{10}{section*.29}
+\contentsline {paragraph}{}{9}{section*.29}
 \contentsline {subsection}{\numberline {2.2.1}Gestion de la liste open}{10}{subsection.2.2.1}
 \contentsline {paragraph}{}{10}{section*.30}
 \contentsline {subsubsection}{Profondeur d'abord}{10}{section*.31}
@@ -61,7 +61,7 @@
 \contentsline {paragraph}{}{12}{section*.45}
 \contentsline {subsubsection}{\IeC {\'E}valuation par matrice}{12}{section*.46}
 \contentsline {paragraph}{}{12}{section*.47}
-\contentsline {subsubsection}{\IeC {\'E}valuation par Bitset}{13}{section*.49}
+\contentsline {subsubsection}{\IeC {\'E}valuation par Bitset}{12}{section*.49}
 \contentsline {paragraph}{}{13}{section*.50}
 \contentsline {section}{\numberline {2.3}Interface graphique}{13}{section.2.3}
 \contentsline {paragraph}{}{13}{section*.51}
@@ -114,52 +114,89 @@
 \contentsline {paragraph}{}{32}{section*.112}
 \contentsline {paragraph}{}{32}{section*.113}
 \contentsline {paragraph}{}{33}{section*.115}
-\contentsline {part}{II\hspace {1em}Approche par espace des solutions}{34}{part.2}
+\contentsline {part}{II\hspace {1em}Approche par espace des solutions BSO}{34}{part.2}
 \contentsline {chapter}{\numberline {4}Introduction : }{35}{chapter.4}
 \contentsline {section}{\numberline {4.1}Probl\IeC {\'e}matique : }{35}{section.4.1}
 \contentsline {paragraph}{Limite des m\IeC {\'e}thodes de recherche CLASSIQUES}{35}{section*.116}
 \contentsline {section}{\numberline {4.2}D\IeC {\'e}finitions}{35}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Espace des solutions}{35}{subsection.4.2.1}
 \contentsline {paragraph}{}{35}{section*.117}
-\contentsline {subsection}{\numberline {4.2.2}Metaheuristique}{35}{subsection.4.2.2}
-\contentsline {paragraph}{}{35}{section*.118}
-\contentsline {subsection}{\numberline {4.2.3}Intelligence en essaim (Swarm intelligence) }{35}{subsection.4.2.3}
-\contentsline {paragraph}{}{35}{section*.119}
-\contentsline {subsection}{\numberline {4.2.4}Bee swarm optimization (BSO)}{35}{subsection.4.2.4}
-\contentsline {paragraph}{}{35}{section*.120}
-\contentsline {chapter}{\numberline {5}Impl\IeC {\'e}mentation de l'algorithme BSO pour le probl\IeC {\`e}me SAT}{36}{chapter.5}
-\contentsline {section}{\numberline {5.1}Structures de donn\IeC {\'e}es:}{36}{section.5.1}
+\contentsline {subsection}{\numberline {4.2.2}M\IeC {\'e}taheuristique}{36}{subsection.4.2.2}
+\contentsline {paragraph}{}{36}{section*.119}
+\contentsline {subsection}{\numberline {4.2.3}Intelligence en essaim (Swarm intelligence) }{36}{subsection.4.2.3}
 \contentsline {paragraph}{}{36}{section*.121}
-\contentsline {subsection}{\numberline {5.1.1}Repr\IeC {\'e}sentation d\IeC {\textquoteright }instance et de solutions SAT:}{36}{subsection.5.1.1}
+\contentsline {subsection}{\numberline {4.2.4}Bee swarm optimization (BSO)}{36}{subsection.4.2.4}
 \contentsline {paragraph}{}{36}{section*.122}
-\contentsline {subsection}{\numberline {5.1.2}La table Dance:}{37}{subsection.5.1.2}
-\contentsline {paragraph}{}{37}{section*.123}
-\contentsline {section}{\numberline {5.2}Conception et pseudo-code:}{37}{section.5.2}
+\contentsline {chapter}{\numberline {5}Impl\IeC {\'e}mentation de l'algorithme BSO pour le probl\IeC {\`e}me SAT}{37}{chapter.5}
+\contentsline {section}{\numberline {5.1}Structures de donn\IeC {\'e}es:}{37}{section.5.1}
 \contentsline {paragraph}{}{37}{section*.124}
-\contentsline {subsection}{\numberline {5.2.1}Algorithme de recherche:}{37}{subsection.5.2.1}
+\contentsline {subsection}{\numberline {5.1.1}Repr\IeC {\'e}sentation d\IeC {\textquoteright }instance et de solutions SAT:}{37}{subsection.5.1.1}
+\contentsline {paragraph}{}{37}{section*.125}
+\contentsline {subsection}{\numberline {5.1.2}La table Dance:}{38}{subsection.5.1.2}
+\contentsline {paragraph}{}{38}{section*.126}
+\contentsline {section}{\numberline {5.2}Conception et pseudo-code:}{38}{section.5.2}
+\contentsline {paragraph}{}{38}{section*.127}
+\contentsline {subsection}{\numberline {5.2.1}Algorithme de recherche:}{38}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Le param\IeC {\'e}trage empirique:}{39}{subsection.5.2.2}
-\contentsline {paragraph}{}{39}{section*.126}
-\contentsline {subsubsection}{Flip:}{39}{section*.127}
-\contentsline {paragraph}{}{39}{section*.128}
-\contentsline {subsubsection}{Nombre maximale d'it\IeC {\'e}rations globales:}{39}{section*.129}
-\contentsline {paragraph}{}{39}{section*.130}
-\contentsline {subsubsection}{Nombre maximale d\IeC {\textquoteright }it\IeC {\'e}rations locale:}{39}{section*.131}
-\contentsline {paragraph}{}{39}{section*.132}
-\contentsline {subsubsection}{Param\IeC {\`e}tre de stagnation:}{40}{section*.133}
-\contentsline {paragraph}{}{40}{section*.134}
-\contentsline {subsection}{\numberline {5.2.3}Le param\IeC {\'e}trage dynamique:}{40}{subsection.5.2.3}
-\contentsline {subsubsection}{Nombre maximale d\IeC {\textquoteright }it\IeC {\'e}rations locale:}{41}{section*.136}
-\contentsline {paragraph}{}{41}{section*.137}
-\contentsline {paragraph}{}{42}{section*.140}
+\contentsline {paragraph}{}{39}{section*.129}
+\contentsline {subsubsection}{Flip:}{40}{section*.130}
+\contentsline {paragraph}{}{40}{section*.131}
+\contentsline {subsubsection}{Nombre maximale d'it\IeC {\'e}rations globales:}{40}{section*.132}
+\contentsline {paragraph}{}{40}{section*.133}
+\contentsline {subsubsection}{Nombre maximale d\IeC {\textquoteright }it\IeC {\'e}rations locale:}{40}{section*.134}
+\contentsline {paragraph}{}{40}{section*.135}
+\contentsline {subsubsection}{Param\IeC {\`e}tre de stagnation:}{40}{section*.136}
+\contentsline {paragraph}{}{40}{section*.137}
+\contentsline {subsection}{\numberline {5.2.3}Le param\IeC {\'e}trage dynamique:}{41}{subsection.5.2.3}
+\contentsline {subsubsection}{Nombre maximale d\IeC {\textquoteright }it\IeC {\'e}rations locale:}{41}{section*.139}
+\contentsline {paragraph}{}{41}{section*.140}
+\contentsline {paragraph}{}{42}{section*.143}
 \contentsline {chapter}{\numberline {6}Exp\IeC {\'e}rimentations}{43}{chapter.6}
 \contentsline {section}{\numberline {6.1}Donn\IeC {\'e}es}{43}{section.6.1}
-\contentsline {paragraph}{}{43}{section*.141}
-\contentsline {section}{\numberline {6.2}R\IeC {\'e}sultats}{43}{section.6.2}
-\contentsline {paragraph}{}{43}{section*.142}
-\contentsline {subsection}{\numberline {6.2.1}Pour les instances satisfiables}{43}{subsection.6.2.1}
-\contentsline {paragraph}{}{43}{section*.143}
-\contentsline {subsection}{\numberline {6.2.2}Pour les instances non satisfiables}{43}{subsection.6.2.2}
 \contentsline {paragraph}{}{43}{section*.144}
-\contentsline {section}{\numberline {6.3}Comparaison avec les m\IeC {\'e}thodes de \ref {part1}}{43}{section.6.3}
+\contentsline {section}{\numberline {6.2}R\IeC {\'e}sultats}{43}{section.6.2}
+\contentsline {subsection}{\numberline {6.2.1}BSO avec param\IeC {\'e}trage statique }{43}{subsection.6.2.1}
 \contentsline {paragraph}{}{43}{section*.145}
-\contentsline {chapter}{\numberline {A}Code source}{46}{appendix.A}
+\contentsline {paragraph}{Importance de chaque param\IeC {\`e}tre}{44}{section*.147}
+\contentsline {subsection}{\numberline {6.2.2}BSO avec param\IeC {\'e}trage dynamique }{44}{subsection.6.2.2}
+\contentsline {subsubsection}{Traitement non-parall\IeC {\`e}le}{44}{section*.152}
+\contentsline {paragraph}{}{44}{section*.153}
+\contentsline {paragraph}{}{46}{section*.157}
+\contentsline {subsubsection}{Traitement parall\IeC {\`e}le}{46}{section*.159}
+\contentsline {paragraph}{}{46}{section*.160}
+\contentsline {section}{\numberline {6.3}Comparaison avec les m\IeC {\'e}thodes de \ref {part1}}{47}{section.6.3}
+\contentsline {paragraph}{}{47}{section*.163}
+\contentsline {part}{III\hspace {1em}Approche par espace des solutions ACO}{48}{part.3}
+\contentsline {chapter}{\numberline {7}Introduction : }{49}{chapter.7}
+\contentsline {section}{\numberline {7.1}Probl\IeC {\'e}matique : }{49}{section.7.1}
+\contentsline {paragraph}{Limite de BSO }{49}{section*.164}
+\contentsline {section}{\numberline {7.2}D\IeC {\'e}finitions}{49}{section.7.2}
+\contentsline {subsection}{\numberline {7.2.1}Ant Colony Optimization(ACO)}{49}{subsection.7.2.1}
+\contentsline {paragraph}{}{49}{section*.165}
+\contentsline {subsubsection}{Ant System(AS)}{50}{section*.167}
+\contentsline {paragraph}{}{50}{section*.168}
+\contentsline {subsubsection}{Ant Colony System(ACS)}{50}{section*.169}
+\contentsline {paragraph}{}{50}{section*.170}
+\contentsline {subsection}{\numberline {7.2.2}Ph\IeC {\'e}romones}{50}{subsection.7.2.2}
+\contentsline {chapter}{\numberline {8}Impl\IeC {\'e}mentation des algorithmes AS/ACS pour le probl\IeC {\`e}me SAT}{51}{chapter.8}
+\contentsline {section}{\numberline {8.1}Structures de donn\IeC {\'e}es:}{51}{section.8.1}
+\contentsline {paragraph}{}{51}{section*.171}
+\contentsline {subsection}{\numberline {8.1.1}Repr\IeC {\'e}sentation d\IeC {\textquoteright }instance et de solutions SAT:}{51}{subsection.8.1.1}
+\contentsline {paragraph}{}{51}{section*.172}
+\contentsline {subsection}{\numberline {8.1.2}La table des Ph\IeC {\'e}romones}{52}{subsection.8.1.2}
+\contentsline {paragraph}{}{52}{section*.173}
+\contentsline {section}{\numberline {8.2}Conception et pseudo-code:}{53}{section.8.2}
+\contentsline {paragraph}{}{53}{section*.176}
+\contentsline {paragraph}{}{54}{section*.178}
+\contentsline {subsection}{\numberline {8.2.1}AS(Ant System)}{54}{subsection.8.2.1}
+\contentsline {paragraph}{}{54}{section*.179}
+\contentsline {paragraph}{}{55}{section*.180}
+\contentsline {paragraph}{}{55}{section*.185}
+\contentsline {subsection}{\numberline {8.2.2}ACS(Ant Colony System)}{56}{subsection.8.2.2}
+\contentsline {paragraph}{}{58}{section*.186}
+\contentsline {chapter}{\numberline {9}h}{59}{chapter.9}
+\contentsline {part}{IV\hspace {1em}Comparaisons et conclusions g\IeC {\'e}n\IeC {\'e}rale}{60}{part.4}
+\contentsline {chapter}{\numberline {10}Comparaisons des trois approches}{61}{chapter.10}
+\contentsline {chapter}{\numberline {11}Conclusion g\IeC {\'e}n\IeC {\'e}rale}{62}{chapter.11}
+\contentsline {paragraph}{}{62}{section*.192}
+\contentsline {chapter}{\numberline {A}Code source}{65}{appendix.A}
