@@ -137,17 +137,29 @@
 \contentsline {section}{\numberline {5.2}Conception et pseudo-code:}{37}{section.5.2}
 \contentsline {paragraph}{}{37}{section*.124}
 \contentsline {subsection}{\numberline {5.2.1}Algorithme de recherche:}{37}{subsection.5.2.1}
-\contentsline {subsection}{\numberline {5.2.2}Les param\IeC {\`e}tres empiriques:}{39}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Les param\IeC {\`e}tres dynamiques:}{39}{subsection.5.2.3}
-\contentsline {chapter}{\numberline {6}Exp\IeC {\'e}rimentations}{40}{chapter.6}
-\contentsline {section}{\numberline {6.1}Donn\IeC {\'e}es}{40}{section.6.1}
-\contentsline {paragraph}{}{40}{section*.126}
-\contentsline {section}{\numberline {6.2}R\IeC {\'e}sultats}{40}{section.6.2}
-\contentsline {paragraph}{}{40}{section*.127}
-\contentsline {subsection}{\numberline {6.2.1}Pour les instances satisfiables}{40}{subsection.6.2.1}
-\contentsline {paragraph}{}{40}{section*.128}
-\contentsline {subsection}{\numberline {6.2.2}Pour les instances non satisfiables}{40}{subsection.6.2.2}
-\contentsline {paragraph}{}{40}{section*.129}
-\contentsline {section}{\numberline {6.3}Comparaison avec les m\IeC {\'e}thodes de \ref {part1}}{40}{section.6.3}
-\contentsline {paragraph}{}{40}{section*.130}
-\contentsline {chapter}{\numberline {A}Code source}{43}{appendix.A}
+\contentsline {subsection}{\numberline {5.2.2}Le param\IeC {\'e}trage empirique:}{39}{subsection.5.2.2}
+\contentsline {paragraph}{}{39}{section*.126}
+\contentsline {subsubsection}{Flip:}{39}{section*.127}
+\contentsline {paragraph}{}{39}{section*.128}
+\contentsline {subsubsection}{Nombre maximale d'it\IeC {\'e}rations globales:}{39}{section*.129}
+\contentsline {paragraph}{}{39}{section*.130}
+\contentsline {subsubsection}{Nombre maximale d\IeC {\textquoteright }it\IeC {\'e}rations locale:}{39}{section*.131}
+\contentsline {paragraph}{}{39}{section*.132}
+\contentsline {subsubsection}{Param\IeC {\`e}tre de stagnation:}{40}{section*.133}
+\contentsline {paragraph}{}{40}{section*.134}
+\contentsline {subsection}{\numberline {5.2.3}Le param\IeC {\'e}trage dynamique:}{40}{subsection.5.2.3}
+\contentsline {subsubsection}{Nombre maximale d\IeC {\textquoteright }it\IeC {\'e}rations locale:}{41}{section*.136}
+\contentsline {paragraph}{}{41}{section*.137}
+\contentsline {paragraph}{}{42}{section*.140}
+\contentsline {chapter}{\numberline {6}Exp\IeC {\'e}rimentations}{43}{chapter.6}
+\contentsline {section}{\numberline {6.1}Donn\IeC {\'e}es}{43}{section.6.1}
+\contentsline {paragraph}{}{43}{section*.141}
+\contentsline {section}{\numberline {6.2}R\IeC {\'e}sultats}{43}{section.6.2}
+\contentsline {paragraph}{}{43}{section*.142}
+\contentsline {subsection}{\numberline {6.2.1}Pour les instances satisfiables}{43}{subsection.6.2.1}
+\contentsline {paragraph}{}{43}{section*.143}
+\contentsline {subsection}{\numberline {6.2.2}Pour les instances non satisfiables}{43}{subsection.6.2.2}
+\contentsline {paragraph}{}{43}{section*.144}
+\contentsline {section}{\numberline {6.3}Comparaison avec les m\IeC {\'e}thodes de \ref {part1}}{43}{section.6.3}
+\contentsline {paragraph}{}{43}{section*.145}
+\contentsline {chapter}{\numberline {A}Code source}{46}{appendix.A}

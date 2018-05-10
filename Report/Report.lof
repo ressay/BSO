@@ -22,11 +22,14 @@
 \contentsline {figure}{\numberline {3.14}{\ignorespaces Illustration des donn\IeC {\'e}es de la table \ref {table:stat_non_sat}\relax }}{31}{figure.caption.106}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Illustration des r\IeC {\'e}gions de recherche des diff\IeC {\'e}rentes it\IeC {\'e}rations\relax }}{40}{figure.caption.135}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Illustration de BSO avec un nombre de recherche locale \IeC {\'e}gale \IeC {\`a} la distance entre les solutions\relax }}{41}{figure.caption.138}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Illustration de BSO avec un nombre de recherche locale inf\IeC {\'e}rieur \IeC {\`a} la distance entre les solutions\relax }}{42}{figure.caption.139}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {A.1}{\ignorespaces Algorithme de recherche principal\relax }}{43}{figure.caption.133}
-\contentsline {figure}{\numberline {A.2}{\ignorespaces Gestion de open en largeur d'abord\relax }}{44}{figure.caption.134}
-\contentsline {figure}{\numberline {A.3}{\ignorespaces Gestion de open par profondeur d'abord\relax }}{44}{figure.caption.135}
-\contentsline {figure}{\numberline {A.4}{\ignorespaces Gestion de open en tant que tas\relax }}{45}{figure.caption.136}
-\contentsline {figure}{\numberline {A.5}{\ignorespaces Chargement de l'instance depuis le fichier benchmark\relax }}{45}{figure.caption.137}
-\contentsline {figure}{\numberline {A.6}{\ignorespaces Structure d'un noeud dans l'arborescence\relax }}{46}{figure.caption.138}
+\contentsline {figure}{\numberline {A.1}{\ignorespaces Algorithme de recherche principal\relax }}{46}{figure.caption.148}
+\contentsline {figure}{\numberline {A.2}{\ignorespaces Gestion de open en largeur d'abord\relax }}{47}{figure.caption.149}
+\contentsline {figure}{\numberline {A.3}{\ignorespaces Gestion de open par profondeur d'abord\relax }}{47}{figure.caption.150}
+\contentsline {figure}{\numberline {A.4}{\ignorespaces Gestion de open en tant que tas\relax }}{48}{figure.caption.151}
+\contentsline {figure}{\numberline {A.5}{\ignorespaces Chargement de l'instance depuis le fichier benchmark\relax }}{48}{figure.caption.152}
+\contentsline {figure}{\numberline {A.6}{\ignorespaces Structure d'un noeud dans l'arborescence\relax }}{49}{figure.caption.153}
