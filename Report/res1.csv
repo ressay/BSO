@@ -1,7 +1,0 @@
-MaxIterations,Flip,Nombres d’abeilels,MaxChances,Local searches,Moyennes des clauses satisfaites,Taux moyen de satisfiabilité,temps moyen d’exécution(s)
-1000,5,30,7,15,324.72,0.9991384615,2.65978
-1000,5,30,9,20,324.72,0.9991384615,3.77651
-1000,5,30,9,25,324.72,0.9991384615,4.405
-1000,5,30,11,20,324.7,0.9990769231,3.58024
-1000,5,30,11,30,324.7,0.9990769231,5.73142
-1000,5,30,7,30,324.69,0.9990461538,5.29142
