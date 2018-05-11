@@ -131,7 +131,7 @@
 				1   & 0.1     & 0.1           \\ \hline
 				2   & 0.1     & 0.1           \\ \hline
 				3   & 0.1     & 0.1           \\ \hline
-				4   & 0.325     & 0.102           \\ \hline
+				4   & \cellcolor{green}0.325     & \cellcolor{red!60}0.102           \\ \hline
 			\end{tabular}
 			\caption{Table des phéromones après le passage d'une fourmille}
 		\end{table}
@@ -492,4 +492,16 @@
 		\end{table}
 	\end{minipage}
 	
-	
+	\newpage
+	\section{Actions post-construction(Deamons)}\label{deamons}
+	\paragraph{}
+	Pour améliorer encore plus les deux implémentation d'ACO, une séquence d'actions appelées \textbf{Deamons} peut être exécutée, dans notre cas nous avons choisis les deux traitements suivants : 
+	\begin{itemize}
+		\item \textbf{exploreNeighbours} : elle consiste en une recherche locale d'une solution voisine par une fourmille quelconque, a travers une recherche "Tabou" classique eut coûteuse, afin d'éviter de tomber dans des optimums locaux, la recherche est freiné après un petit nombre d'itérations appelé \textbf{step}(dans les 15 20 itérations).
+		\begin{figure}[H]
+			\centering
+			\includegraphics[width=0.7\textwidth]{images/localSearch.jpg}
+			\caption{Exemple de recherche locale}
+		\end{figure}
+		\item \textbf{improveSolution} : le but est de  satisfaire un peu plus de clauses a chaque itérations en inversant la valeur d'une variable si elle apparait dans une clause non satisfaites de l'instance, si la nouvelle solution est meilleure que l'orignal, alors elle deviendra la solution construite par la fourmille.
+	\end{itemize}
