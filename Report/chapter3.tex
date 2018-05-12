@@ -10,7 +10,7 @@ Un fichier en format \textbf{DIMACS} est un fichier dont l'extension est \textbf
 	\item La première ligne du fichier(après les commentaires) doit être structurée de la manière suivante : \textbf{\textcolor{green}{p cnf} \textcolor{blue}{nbvar} \textcolor{red}{nbclause}}
 	\begin{enumerate}
 		\item \textbf{\textcolor{green}{p cnf}} pour indiquer que l'instance est en forme normale conjonctive \textbf{FNC}.
-		\item \textbf{\textcolor{blue}{nbvar}} indique le nombre de litéraux au total dans l'instance, à noté que chaque literal $x_{i}$ sera représenté par son indice $i$.
+		\item \textbf{\textcolor{blue}{nbvar}} indique le nombre de variable au total dans l'instance, à noté que chaque literal $x_{i}$ sera représenté par son indice $i$.
 		\item \textbf{\textcolor{red}{nbclause}} le nombre total de clauses présentes dans l'instance.
 	\end{enumerate}
 	\item chaque ligne représente une conjonction de litéraux $(x_{i} \vert \lnot x_{i})$ indentifiés par un numero $i$, séparés par un blanc, avec un 0 à la fin pour marquer la fin de la ligne.
@@ -31,15 +31,15 @@ Dans \cite{Benchmark} nous avons à notre disposition deux types d'instances pou
 	\item Un ensemble d'instances satisfiable dans un fichier dénommé UUF\textbf{\textcolor{blue}{XX}}-\textbf{\textcolor{red}{YY}}
 	\item avec : 
 	\begin{enumerate}
-		\item \textbf{\textcolor{blue}{XX}} = nombre de litéraux
+		\item \textbf{\textcolor{blue}{XX}} = nombre de variable
 		\item \textbf{\textcolor{red}{YY}} = nombre de clauses
 	\end{enumerate}
 \end{itemize}
 \newpage
 \section{Environement de travail}
-\subsection{Machines}\label{machines}
+\subsection{Machines utilisées pour les expérimentations}\label{machines}
 \paragraph{}
-Pour les tests nous avons utilisé deux machines pour chaque groupes d'instances, autrement dit une machine pour effectuer les tests sur un ensembles d'instances satisfiables \textbf{\textcolor{blue}{UF75-325}}\cite{Benchmark} et une autre sur les instances contradictoires(non satisfiables) \textbf{\textcolor{red}{UUF75-325}}\cite{Benchmark}, les caractéristiques de chaque machines sont données dans les figures \ref{fig:machineA} et \ref{fig:machineB} suivantes : 
+Pour les tests nous avons utilisé deux machines pour chaque groupe d'instances, autrement dit une machine pour effectuer les tests sur un ensemble d'instances satisfiables \textbf{\textcolor{blue}{UF75-325}}\cite{Benchmark} et une autre sur les instances contradictoires(non satisfiables) \textbf{\textcolor{red}{UUF75-325}}\cite{Benchmark}, les caractéristiques de chaque machines sont données dans les figures \ref{fig:machineA} et \ref{fig:machineB} :   
 \begin{figure}[H]
 	\centering
 	\includegraphics[scale=0.75]{images/machineWISS.png}
@@ -56,9 +56,49 @@ Pour les tests nous avons utilisé deux machines pour chaque groupes d'instances
 \subsection{Outils utilisés}
 \subsubsection{Langage de programmation : }
 \paragraph{}
-Nous avons opté pour le langage \href{https://fr.wikipedia.org/wiki/Java_(technique)}{Java}, car il offre une grande flexibilité et un facilite l'implémentation qui est due au fait qu'il soit totallement orienté-objet.
+Nous avons opté pour le langage \href{https://fr.wikipedia.org/wiki/Java_(technique)}{Java}, car il offre une grande flexibilité et facilite l'implémentation qui est due au fait qu'il soit totalement orienté-objet.
 \subsubsection{IDE : }
-\paragraph{IntelliJ Idea} L'environement de dévelopement choisit est \href{https://www.jetbrains.com/idea/}{IntelliJ IDEA}, spécialement dédié au développement en utilisant le langage \href{https://fr.wikipedia.org/wiki/Java_(technique)}{Java}, il est proposé par l'entreprise \href{https://www.jetbrains.com}{JetBrains} et est caractérisé par sa forte simplicité d'utilisation et les nombreux plugins et extentions qui lui sont dédiées.
+\paragraph{IntelliJ Idea} L'environnement de développement choisit est \href{https://www.jetbrains.com/idea/}{IntelliJ IDEA}, spécialement dédié au développement en utilisant le langage \href{https://fr.wikipedia.org/wiki/Java_(technique)}{Java}. Il est proposé par l'entreprise \href{https://www.jetbrains.com}{JetBrains} et est caractérisé par sa forte simplicité d'utilisation et les nombreux plugins et extensions qui lui sont dédiées.
+\section{Interface graphique}
+\paragraph{}
+Afin de faciliter l'utilisation des méthodes, et la visualisation en temps réel du comportement de ces dernière, nous avons mis au point une interface graphique simple d'utilisation.
+\paragraph{}
+La fenêtre principale se décompose en quatre sections ( voir figure ci dessous \ref{fig:mainWindow} )
+\begin{figure}[H]
+	\includegraphics[width=\textwidth]{images/imgs/interface.png}
+	\label{fig:mainWindow}
+	\caption{Fenêtre principale }
+\end{figure}
+\newpage
+\paragraph{Détails}
+\begin{enumerate}
+	\item Une liste déroulante pour choisir la méthode de recherche désirée.
+	\item Le nombre d'exécutions sur une même instance.
+	\item La durée (en secondes) d'une exécution sur une instance.
+	\item Un groupe d'onglets dédiés à l'affichage de trois types de graphiques illustratifs.
+\end{enumerate}
+\paragraph{}
+Pour ce qui en est des groupes d'onglets, nous avons trois types de graphiques : 
+\begin{itemize}
+	\item \textbf{Attempts : } un histogramme montrant le taux de satisfiabilité pour chaque exécution sur une instances : 
+	\begin{figure}[H]\label{attemptsChart}
+		\centering
+		\includegraphics[scale=0.5]{images/imgs/attemptsChart.png}
+		\caption{Attempts}
+	\end{figure}
+	\item \textbf{XYChart : } une courbe pour suivre l'évolution du taux de satisfiabilité pour chaque tentative : 
+	\begin{figure}[H]\label{XYchart}
+		\centering
+		\includegraphics[scale=0.5]{images/imgs/XYChart.png}
+		\caption{XYChart}
+	\end{figure}
+	\item \textbf{Clauses satisfied : } un histogramme qui montre la fréquence de satisfiabilité d'une clause $c_i$ durant une tentative sur l'instance courante, l'histogramme est trié pour mieux observer les données : 
+	\begin{figure}[H]\label{frequencies}
+		\centering
+		\includegraphics[scale=0.5]{images/imgs/frequenciesChart.png}
+		\caption{Clauses satisfied during evaluation of execution of UF75-325-01}
+	\end{figure}
+\end{itemize}
 
 \section{Résultats}\label{tests}
 \paragraph{}
@@ -75,7 +115,7 @@ Les résultats sont présentés d'abord sous forme de tables puis illustrés dan
 	\label{table:Tab_BFS_Sat}
 	\begin{tabular}{|c|c|c|c|}
 		\hline
-		Fichiers test              & Instance & Maximum clauses & Taux  moyen de satisfiabilité \\ \hline
+		Fichiers test              & Instance & Max clauses satisfaites & Taux  moyen de satisfiabilité \\ \hline
 		\multirow{10}{*}{UF75-325} & 1        & 153             & 42,83\%                       \\ \cline{2-4} 
 		& 2        & 152             & 43,94\%                       \\ \cline{2-4} 
 		& 3        & 147             & 42,31\%                       \\ \cline{2-4} 
@@ -104,7 +144,7 @@ Les résultats sont présentés d'abord sous forme de tables puis illustrés dan
 	\label{table:Tab_BFS_Non_Sat}
 	\begin{tabular}{|c|c|c|c|}
 		\hline
-		Fichiers test               & Instance & Maximum clauses & Taux moyen de satisfiabilité \\ \hline
+		Fichiers test               & Instance & Max clauses satisfaites & Taux moyen de satisfiabilité \\ \hline
 		\multirow{10}{*}{UUF75-325} & 1        & 143             & 41,60\%                      \\ \cline{2-4} 
 		& 2        & 147             & 42,95\%                      \\ \cline{2-4} 
 		& 3        & 151             & 41,23\%                      \\ \cline{2-4} 
@@ -120,7 +160,7 @@ Les résultats sont présentés d'abord sous forme de tables puis illustrés dan
 \end{table}
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{images/BFSUUF75Graph.png}
-	\caption{Illustration des données de \ref{table:Tab_BFS_Non_Sat}}
+	\caption{Illustration des données de \ref{table:Tab_BFS_Sat}}
 \end{figure}
 
 \newpage
@@ -133,7 +173,7 @@ Les résultats sont présentés d'abord sous forme de tables puis illustrés dan
 	\centering
 	\begin{tabular}{|c|c|c|c|}
 	\hline
-	Fichiers test              & Instance & Maximum clauses & Taux moyen de satisfiabilité \\ \hline
+	Fichiers test              & Instance & Max clauses satisfaites & Taux moyen de satisfiabilité \\ \hline
 	\multirow{10}{*}{UF75-325} & 1        & 312             & 92,95\%                      \\ \cline{2-4} 
 	& 2        & 306             & 92,37\%                      \\ \cline{2-4} 
 	& 3        & 309             & 92,46\%                      \\ \cline{2-4} 
@@ -150,7 +190,7 @@ Les résultats sont présentés d'abord sous forme de tables puis illustrés dan
 \end{table}
 \begin{figure}[H]
 	\includegraphics[width=\textwidth]{images/DFSUF75Graph.png}
-	\caption{Illustration des données de la table \ref{table:Tab_DFS_Sat}}
+	\caption{Illustration des données de la table \ref{table:Tab_Astar_Non_Sat}}
 \end{figure}
 
 
@@ -413,7 +453,7 @@ Les résultats sont présentés d'abord sous forme de tables puis illustrés dan
 
 \subsubsection{Améliorations avec BitSet}
 \paragraph{}
-Nous avons tenté de comparé les résultats expérimentaux en essayant différentes structures de données pour l'évaluation d'une solution et la gestion de la liste open, le tableau suivant ( voir table \ref{tab:bitsetIsLayfu} )  \ démontre que la structure du BitSet proposée évalue 15 à 190 fois ( selon la géstion de open ) plus de clauses en une seconde que la struture de matrice, combiner cette représentation avec une gesion en tas de open, nous a fait gagné un temps assez important lors de l'évaluation et le réarrangement de open.
+Nous avons tenté de comparé les résultats expérimentaux en essayant différentes structures de données pour l'évaluation d'une solution et la gestion de la liste open, le tableau suivant ( voir table \ref{tab:bitsetIsLayfu} )  \ démontre que la structure du BitSet proposée évalue 15 à 190 fois ( selon la gestion de open ) plus de clauses en une seconde que la structure de matrice, combiner cette représentation avec une gestion en tas de open, nous a fait gagné un temps assez important lors de l'évaluation et le réarrangement de open.
 \begin{center}\label{tab:bitsetIsLayfu}
 	\begin{tabular}{|c | c| c|}
 		\hline
@@ -430,12 +470,12 @@ Nous avons tenté de comparé les résultats expérimentaux en essayant différe
 		
 \section{Comparaison entres les cinq méthodes}
 \paragraph{}
-Pour conclure ce chapitre, nous allons mainetant comparer les différentes méthodes selon la rapidité d'exécution, l'espace mémoire utilisé et le taux de satisfiabilité enregistré.
+Pour conclure ce chapitre, nous allons maintenant comparer les différentes méthodes selon la rapidité d'exécution, l'espace mémoire utilisé et le taux de satisfiabilité enregistré.
 \paragraph{}
-Nous avons remarqué à travers les nombreux tests que les deux catégories de stratégies de recherche avaient des forces et des lacunes, pour citer des exemples, la recherche par profondeur d'abord et en largeur d'abord de part sa simplicité, sont de bonnes stratégies de recherche, mais dont les limites sont vites atteintes, la première est certe peu gourmande en espace mémoire, mais ne trouve pas la solution en un temps assez rapide, la deuxième quant à elle nous garantie (si le coût pour passer d'un noeud à un autre est le même quelques soient les noeuds choisis) de trouver la solution avec le plus petit nombre de litéraux possible, mais en contre partie consomme énormemment de mémoire, ce qui peut conduire à un débordement de la mémoire très rapidement\label{BreadthIssueCompare}.
+Nous avons remarqué à travers les nombreux tests que les deux catégories de stratégies de recherche avaient des forces et des lacunes, pour citer des exemples, la recherche par profondeur d'abord et en largeur d'abord de part sa simplicité, sont de bonnes stratégies de recherche, mais dont les limites sont vites atteintes, la première est certe peu gourmande en espace mémoire, mais ne trouve pas la solution en un temps assez rapide, la deuxième quant à elle nous garantie (si le coût pour passer d'un noeud à un autre est le même quelques soient les noeuds choisis) de trouver la solution avec le plus petit nombre de litéraux possible, mais en contre partie consomme énormément de mémoire, ce qui peut conduire à un débordement de la mémoire très rapidement\label{BreadthIssueCompare}.
 \paragraph{}
-Pour ce qu'il en est de l'agrotithme de recherche par coût uniforme, il se voit être un compromis entre l'agorithme DFS\footnote{Depth first search} (voir \ref{DFSdef}) et l'algorithme BFS(\footnote{Breadth first search} (voir \ref{BFSdef}, il assure de trouver la solution avec un potentiel débordement de mémoire, mais peut aussi prendre un temps exponentiel pour trouver la solution (\ref{DijkstraDef}), les expérimentations réalisés en sont la preuve.
+Pour ce qu'il en est de l'algorithme de recherche par coût uniforme, il se voit être un compromis entre l'algorithme DFS\footnote{Depth first search} (voir \ref{DFSdef}) et l'algorithme BFS(\footnote{Breadth first search} (voir \ref{BFSdef}, il assure de trouver la solution avec un potentiel débordement de mémoire, mais peut aussi prendre un temps exponentiel pour trouver la solution (\ref{DijkstraDef}), les expérimentations réalisés en sont la preuve.
 \paragraph{}
-Quand on bascule vers la deuxième catégorie, on se rend vite commpte que l'ajout d'une heuristique peut réduire le temps de recherche d'une façon significative, ce que fait l'algorithme DFS en 10-15 mins peut être fait en quelques secondes avec l'algorithme de recherches gloutonne ou bien A*, cependant le gain en rapidité ne masque pas le fait que l'espace mémoire reste aussi soumis à un débordement ( moins fréquemment mais ça reste un risque potentiel), de plus la difficulté de trouver de bonnes heuristiques ( admissibles par exemple ) demeure un challenge du point de vue théorique et pratique, à noté aussi que très souvent, l'algorithme A* se limite à une recherche dans un maximum local, ce qui peut ralentir le processus de recherche de solutions optimales.
+Quand on bascule vers la deuxième catégorie, on se rend vite compte que l'ajout d'une heuristique peut réduire le temps de recherche d'une façon significative, ce que fait l'algorithme DFS en 10-15 mins peut être fait en quelques secondes avec l'algorithme de recherches gloutonne ou bien A*, cependant le gain en rapidité ne masque pas le fait que l'espace mémoire reste aussi soumis à un débordement ( moins fréquemment mais ça reste un risque potentiel), de plus la difficulté de trouver de bonnes heuristiques ( admissibles par exemple ) demeure un challenge du point de vue théorique et pratique, à noté aussi que très souvent, l'algorithme A* se limite à une recherche dans un maximum local, ce qui peut ralentir le processus de recherche de solutions optimales.
 \paragraph{}
-Une remarque à faire concernant l'ensemble des méthodes utilisées est que les résultats, malgré le fait que le choix des noeuds soit àléatoire, ne diffèrent pas d'une exécution à une autre sur une même instance ( pour A* par exemple on est dans les 96\%-97\% de taux de satisfiabilité sur les benchmarks fournis) , cela est dû principalement au fait que les fréquences d'apparitions des litéraux soient très proches les unes des autres, aisni choisir un litéral (ou sa négation) plutôt qu'un autre n'influe pas vraiment sur le résultat final.
+Une remarque à faire concernant l'ensemble des méthodes utilisées est que les résultats, malgré le fait que le choix des noeuds soit aléatoire, ne diffèrent pas d'une exécution à une autre sur une même instance ( pour A* par exemple on est dans les 96\%-97\% de taux de falsifiabilité sur les benchmarks fournis) , cela est dû principalement au fait que les fréquences d'apparitions des littéraux soient très proches les unes des autres, ainsi choisir un littéral (ou sa négation) plutôt qu'un autre n'influe pas vraiment sur le résultat final.

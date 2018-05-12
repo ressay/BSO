@@ -199,8 +199,7 @@
 	\paragraph{}Pour éviter de stagner pendant longtemps, si les solutions de Dance ne s’améliore pas durant un certain nombre d’itérations, on choisit la solution la plus distante du reste des solutions, et ainsi permettre à BSO d’explorer de nouvelles solutions. Ce nombre d’itérations limite est lui aussi un paramètre empirique que nous utiliserons dans cette implémentation de BSO.
 	
 	\subsection{Le paramétrage dynamique:}
-	Une autre solution serait de régler les paramètres dynamiquement pendant l’exécution. Nous nous sommes basés sur l’algorithme du recuit simulé \footnote{Kirkpatrick, S.; Gelatt Jr, C. D.; Vecchi, M. P. (1983). "Optimization by Simulated Annealing". Science. 220 (4598): 671–680. Bibcode:1983Sci...220..671K. doi:10.1126/science.220.4598.671. JSTOR 1690046. PMID 17813860)
-	} pour varier les valeurs des paramètres de BSO.
+	Une autre solution serait de régler les paramètres dynamiquement pendant l’exécution. Nous nous sommes basés sur l’algorithme du recuit simulé \cite{simulatedAnnealing} pour varier les valeurs des paramètres de BSO.
 
 	Le principe est simple, On commence BSO avec une distance entre les solutions relativement grande, la distance ensuite diminue plus le nombre d’itération augmente. Cela permet de remplir initialement la table Dance avec des solutions lointaines les unes des autres, ensuite avec le passage du temps la recherche se fait de plus en plus au voisinage des meilleures solutions entre elles. Si l’algorithme arrive à un état de stagnation, la distance entre les solutions est réinitialiser à une grande distance pour permettre à l’algorithme d’explorer d’autres régions de solutions.
 	\begin{figure}[H]\label{Regions}

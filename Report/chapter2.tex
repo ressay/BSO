@@ -1,4 +1,4 @@
-\chapter{Implémentation}
+\chapter{Implémentation des méthodes de constructives pour SAT}
 \section{Structures de données}
 \paragraph{}
 La stratégie de recherche avec graphe requiert une représentation des entrées du problème, des états construisant une solution potentielle à ce dernier ainsi que le développement de ces états.
@@ -9,6 +9,16 @@ Une instance du problème SAT peut être considérée comme un ensemble de claus
 \paragraph{}
 Une première représentation serait d‘associer à chaque clause de l’instance un tableau de taille égale au nombre de variables logiques utilisés dont la i\up{ième}  case aura la valeur 1 si la variable \textit{i} est présente dans la clause, -1 si sa négation est présente, 0 sinon. Ainsi en représentant toutes les clauses on obtient une matrice dont chaque ligne est associée à une clause.\\
 L’exemple suivant montre une instance du problème SAT et sa représentation matricielle:
+
+\begin{equation*}
+	X={x_1,x_2,x_3,x_4,x_5}
+\end{equation*}
+
+\begin{equation*}
+C={c_1,c_2,c_3}\\
+\end{equation*}
+
+
 \begin{flalign*}
 x_{1} \lor \neg x_{2} \lor x_{5} \\
 \neg x_{2} \lor x_{4} \lor x_{5} \\
@@ -23,15 +33,14 @@ Ces clauses vont être représentée comme suit:
 			\hline
 			0&-1&0&1&1\\
 			\hline
-			-1&1&1&0&0\\
+			-1&1&-1&0&0\\
 			\hline
 		\end{tabular}}
 \end{center}
-\newpage
 
 \subsubsection{Représentation par \textit{Bitset}}
 \paragraph{}
-On pourrait aussi aborder la représentation du point de vu littéral, c’est à dire associer à chaque littéral les clauses dans lesquels il est présent. Pour cela un tableau de bits appelé \textit{Bitset} pourrait être utilisé où chaque bit \textit{i} aurait la valeur 1 si la i\up{ième} clause contient le littéral, la valeur 0 sinon. On obtient donc un tableau de taille 2 fois le nombre de variables utilisés dont les entrés représentent les \textit{Bitsets} des littéraux.\\
+On pourrait aussi aborder la représentation du point de vu littéral, c’est à dire associer à chaque littéral les clauses dans lesquels il est présent. Pour cela un tableau de bits appelé \textit{Bitset} pourrait être utilisé où chaque bit \textit{i} aurait la valeur 1 si la i\up{ième} clause contient le littéral, la valeur 0 sinon. On obtient donc un tableau de taille 2 fois le nombre de variables utilisés dont les entrées représentent les \textit{Bitsets} des littéraux.\\
 Pour le même exemple vu précédemment on obtient les \textit{Bitsets} suivants:\\\\
 	\begin{minipage}{0.5\textwidth}
 		\centering
@@ -59,7 +68,7 @@ Pour le même exemple vu précédemment on obtient les \textit{Bitsets} suivants
 
 \subsection{Représentation des états}
 \paragraph{}
-Une solution à une instance du problème SAT se réduit à l’assignation des valeurs de vérités aux variables logiques de cette instance. On peut considérer un état dans l’espace de recherche comme étant le choix de la valeur de vérité d’une des variables logiques, on obtient après une succession de choix une solution au problème qui peut être positive si les valeurs assignés sont consistante avec les clauses de l’instance, négative sinon. Nous allons représenter un état avec un noeud qui contient le numéro de la variable choisie, multiplié par -1 pour désigner l’assignation de la valeur $faux$ à la variable, il reste inchangé sinon.\\
+Une solution à une instance du problème SAT se réduit à l’assignation des valeurs de vérités aux variables logiques de cette instance. On peut considérer un état dans l’espace de recherche comme étant le choix de la valeur de vérité d’une des variables logiques, on obtient après une succession de choix une solution au problème qui peut être positive si les valeurs assignées sont consistantes avec les clauses de l’instance, négatives sinon. Nous allons représenter un état avec un noeud qui contient le numéro de la variable choisie, multiplié par -1 pour désigner l’assignation de la valeur $faux$ à la variable, il reste inchangé sinon.\\
 \begin{center}
 	\begin{forest} [
 		[5[$x_{5} \leftarrow vrai$]]
@@ -131,7 +140,7 @@ struct noeud* parent;
 } noeud;
 \end{lstlisting}
 
-\paragraph{Remarque1:}\label{BreadthIssue} Un inconvénient que nous avons déjà cité de la recherche en largeur d’abord était la saturation rapide de la mémoire, cela est dû au fait de garder tous les noeuds dans la mémoire. Ce problème est évité dans la recherche en profondeur d’abord car dès l’évaluation d’un noeud se trouvant dans la profondeur maximale, ce dernier est supprimé de la mémoire. notons que la structure du noeud déjà présenté ne contient pas les adresses de ses successeurs, ceci nous permet d’éviter de garder tous l’arbre d’états dans la mémoire mais juste les branche susceptible d’être évaluée par la suite.\\~\\
+\paragraph{Remarque1:}\label{BreadthIssue} Un inconvénient que nous avons déjà cité de la recherche en largeur d’abord était la saturation rapide de la mémoire, cela est dû au fait de garder tous les noeuds dans la mémoire. Ce problème est évité dans la recherche en profondeur d’abord car dès l’évaluation d’un noeud se trouvant dans la profondeur maximale, ce dernier est supprimé de la mémoire. notons que la structure du noeud déjà présentée ne contient pas les adresses de ses successeurs, ceci nous permet d’éviter de garder tous l’arbre d’états dans la mémoire mais juste les branche susceptible d’être évaluée par la suite.\\~\\
 \paragraph{Remarque2:} Dans la deuxième représentation du problème SAT, une optimisation serait d’ajouter un $Bitset$ dans la structure du noeud et y garder les clauses qu’il satisfait ainsi que celles de ses parents, celui là peut être obtenu en appliquant l’opération OU logique sur le $Bitset$ du noeud parent et celui du littéral choisi.\\
 \begin{center}
 	\begin{minipage}{0.5\textwidth}
@@ -177,8 +186,8 @@ Dans cette partie nous allons présenter l’implémentation des algorithmes de 
 			\Return \textbf{solution}($noeud$)\;
 		}
 		\textbf{ajouter}($noeud$,$closed$)\;
-		$successeurs \gets$ \textbf{developper}($noeud$) \;
-		inserer les $sueccesseurs$ qui n'appartiennent pas à $closed$ dans $open$ 
+		$successeurs \gets$ \textbf{développer}($noeud$) \;
+		inserer les $successeurs$ qui n'appartiennent pas à $closed$ dans $open$ 
 	}
 	\Return echec\;
 \caption{Algorithme de recherche avec graphe}
@@ -186,12 +195,12 @@ Dans cette partie nous allons présenter l’implémentation des algorithmes de 
 \paragraph{}
 La différence entre les algorithmes de recherche réside dans la manière dont on sélectionne le noeud à évaluer, ligne 4 dans l’algorithme si dessus, ainsi que l’estimation du coût et de l’heuristique, s’ils existent, avant l’insertion, ligne 10.\\
 \paragraph{}
-En se basant sur cette algorithme nous avons implémenter une procédure de recherche générique prenant en paramètre un type de gestion de liste, un estimateur de coût et d’heuristique et les entrés de l’instance SAT afin d’évaluer les noeuds.
+En se basant sur cet algorithme nous avons implémenté une procédure de recherche générique prenant en paramètre un type de gestion de liste, un estimateur de coût et d’heuristique et les entrées de l’instance SAT afin d’évaluer les noeuds.
 \subsection{Gestion de la liste open}
 \paragraph{}
 
-\subsubsection{Profondeur d'abord}
-La recherche en profondeur d’abord consiste à choisir le noeud avec la profondeur la plus élevé de l’arbre, ceci reviens à sélectionner l’élément le plus récemment inséré dans la liste open, c’est à dire, la gérer avec une politique LIFO.\\
+\subsubsection{Recherche par profondeur d'abord}
+La recherche en profondeur d’abord consiste à choisir le noeud avec la profondeur la plus élevé de l’arbre, ceci reviens à sélectionner l’élément le plus récemment inséré dans la liste open, c’est à dire, la gérer avec une politique FIFO.\\
 Insertion d'un noeud:\\
 \begin{minipage}{0.5\textwidth}
 	\centering
@@ -231,7 +240,7 @@ $\leftarrow$
 \end{minipage}
 
 
-\subsubsection{Largeur d'abord}
+\subsubsection{Recherche en largeur d'abord}
 \paragraph{}
 
 Contrairement à la recherche en profondeur d’abord, les noeuds sont visités de tel sorte à parcourir l’arbre niveau par niveau, cela peut être réalisé par la sélection du noeud le moins récemment insérer dans open, d’où une gestion LIFO de la liste.\\
@@ -278,7 +287,7 @@ $\leftarrow$
 Dans ce type de recherche, la sélection d’un noeud se fait sur la base d’une fonction d’évaluation. Le noeud sélectionné est celui avec la valeur minimale (resp. maximale) de la fonction d’évaluation. Nous utilisons ce type de gestion afin d’implémenter les algorithmes: recherche à coût uniforme, recherche gloutonne et l’algorithme A*.\\
 Nous avons implémenter ce type de gestion avec deux structures différentes que nous comparerons dans la suite de ce rapport.
 \paragraph{Liste triée}
-Les noeuds sont triés dans une liste selon leur valeur estimé par la fonction d’évaluation. Le premier noeud est toujours sélectionner, l’insertion par contre se fait de tel sorte à garder la liste triée en ordre croissant (resp. décroissant).\\
+Les noeuds sont triés dans une liste selon leur valeur estimée par la fonction d’évaluation. Le premier noeud est toujours sélectionné, l’insertion par contre se fait de telle sorte à garder la liste triée en ordre croissant (resp. décroissant).\\
 Insertion d'un noeud:\\
 \begin{minipage}{0.5\textwidth}
 	\centering
@@ -320,10 +329,10 @@ Complexité de l’insertion : $o(n)$.\\
 Complexité de la sélection : $o(1)$.\\
 
 
-\paragraph{Tas}
+\paragraph{Remarque}
 Les noeuds sont organisé dans une structure de tas\footnote{un tas est un arbre équilibré dont chaque noeud a une clé supérieur (resp. Inférieur) à celle de ses fils}. La racine du tas est sélectionner pour l’évaluation, tandis que l’insertion se fait par entassement du nouveau élément. Les deux opérations se font en $o(log(n))$.
 
-\subsection{Fonction d'évaluation}
+\subsection{Fonction d'évaluation d'un noeud}
 \paragraph{}
 La fonction d’évaluation f d’un noeud n est généralement définit à l’aide de deux autres fonctions g et h. La première désigne le coût nécessaire pour atteindre le noeud n à partir de la racine, tandis que la deuxième est une heuristique qui estime le coût restant avant d’arriver au but.
 \subsubsection{Recherche gloutonne}
@@ -364,7 +373,7 @@ La première méthode consiste à parcourir la matrice des clauses et chercher p
 \begin{algorithm}
 	\SetAlgoLined
 	\KwResult{retourne un booléen: vrai si la solution est positive, faux sinon}
-	\textbf{entré}: $solution$\;
+	\textbf{entré}: $solution partielle$\;
 	\For{$clause \in$ $matrice$}{
 		$satC\gets faux$ \;
 		\For{$noeud \in$ $solution$ et $\neg satC$}{
@@ -385,46 +394,7 @@ La première méthode consiste à parcourir la matrice des clauses et chercher p
 	\Return $faux$\;
 	\caption{Algorithme d'évaluation par matrice}
 \end{algorithm}
+\newpage
 \subsubsection{Évaluation par Bitset}
 \paragraph{}\label{def:Bitset}
 Comme vu précédemment, en utilisant la structure Bitset pour représenter l’instance SAT chaque noeud contient un Bitset des clauses satisfaites par sa branche, il suffit donc de calculer le nombre de bits à 1 pour décider si c’est un noeud but ou pas. Nous utilisons pour cela l’algorithme “Hamming Weight” permettant de calculer le nombre de bits à 1 dans un entier en une complexité constante.
-\section{Interface graphique}
-\paragraph{}
-Afin de faciliter l'utilisation des méthodes, et la visualisation en temps réel du comportemment de ces dernière, nous avons mis au point une interface graphique simple d'utilisation.
-\paragraph{}
-La fenêtre principale se décompose en quatres sections ( voir figure ci dessous \ref{fig:mainWindow} )
-\begin{figure}[H]
-	\includegraphics[width=\textwidth]{images/imgs/interface.png}
-	\label{fig:mainWindow}
-	\caption{Fenêtre principale }
-\end{figure}
-\newpage
-\paragraph{Détails}
-\begin{enumerate}
-	\item Une liste déroulante pour choisir la méthode de recherche désirée.
-	\item Le nombre de tentatives sur une même instance.
-	\item La durée (en secondes) d'une tentative sur une instance.
-	\item Un groupe d'onglets dédiés à l'affichage de trois types de graphiques illustratifs.
-\end{enumerate}
-\paragraph{}
-Pour ce qu'il en est des groupes d'onglets, nous avons trois types de graphiques : 
-\begin{itemize}
-	\item \textbf{Attempts : } un histogramme montrant le taux de satisfiabilité pour chaque tentatives sur une instances : 
-	\begin{figure}[H]\label{attemptsChart}
-		\centering
-		\includegraphics[scale=0.5]{images/imgs/attemptsChart.png}
-		\caption{Attempts}
-	\end{figure}
-	\item \textbf{XYChart : } une courbe pour suivre l'évolution du taux de satisfiabilité pour chaque tentative : 
-	\begin{figure}[H]\label{XYchart}
-		\centering
-		\includegraphics[scale=0.5]{images/imgs/XYChart.png}
-		\caption{XYChart}
-	\end{figure}
-	\item \textbf{Clauses satisfied : } un histogramme qui montre la fréquence de satisfiabilité d'une clause $c_i$ durant une tentative sur l'instance courante, l'histogramme est trié pour mieux observer les données : 
-	\begin{figure}[H]\label{frequencies}
-		\centering
-		\includegraphics[scale=0.5]{images/imgs/frequenciesChart.png}
-		\caption{Clauses satisfied }
-	\end{figure}
-\end{itemize}

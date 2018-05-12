@@ -183,13 +183,13 @@
 	Nous avons décidé de tenter une approche parallèle à la résolution du problème, en considérant chaque abeille comme un thread pouvant réaliser son travail indépendamment des autres abeilles, les résultats en terme de taux de satisfiabilité n'ont pas beaucoup changé, mais une nette amélioration du temps d'exécution peut être soulignée, le graphe et le tableau suivants comparent les deux technique(parallèle vs non-parallèle) en terme de ce dernier : 
 	\begin{table}[H]
 		\centering
-		\caption{My caption}
-		\label{my-label}
+		
 		\begin{tabular}{|c|c|c|c|c|c|}
 			\hline
 			\textbf{UF75-325} & \textbf{UF75-325 PAR} & \textbf{UF100-430} & \textbf{UF100-430 PAR} & \textbf{JNH200-800} & \textbf{JNH200-800 PAR} \\ \hline
 			5,45321           & 2,27845               & 24,44588           & 13,01019               & 312,4600            & 50,3348                 \\ \hline
 		\end{tabular}
+		\caption{Temps moyen passer à l'évaluation (DBSO vs DBSO-Parallèle)}
 	\end{table}
 	\begin{figure}[H]
 		\centering
@@ -198,5 +198,5 @@
 	\end{figure}
 	\section{Comparaison avec les méthodes de \ref{part1}}
 	\paragraph{}
-	Il est évident que l'approche vu dans cette partie surpasse de loin celle vu en partie \ref{part1}, là oû la meilleure des méthodes constructives (A*) ne donnait pas de bon résultats, l'algorithme BSO lui y est clairement un  supérieur, que ce soit en terme d'exactitude ou d'exploitation de ressources(i.e mémoire et temps d'exécution). N'est en moins, cette algorithme admet des limites, et sa nature stochastique n'en fait pas une méthode fiables a 100\%( risque de stagnation prématurée, optimum local, réglage des paramètres couteux en temps .. ), cela nous a amené a explorer un autre algorithme de la même famille(métaheuristiques) mais qui exploite l'approche de construction de solution en même temps, notre choix s'est porté sur ACO (Ant Colony Optimization).
+	Il est évident que l'approche vu dans cette partie surpasse de loin celle vu en  \ref{part1}, là oû la meilleure des méthodes constructives (A*) ne donnait pas d'assez bon résultats, l'algorithme BSO lui y est clairement supérieur, que ce soit en terme d'exactitude ou d'exploitation de ressources(i.e mémoire et temps d'exécution). N'est en moins, cette algorithme admet des limites, et sa nature stochastique n'en fait pas une méthode fiables a 100\%( risque de stagnation prématurée, optimums locaux, réglage des paramètres couteux en temps .. ), cela nous a amené a explorer un autre algorithme de la même famille(méta-heuristiques) mais qui exploite l'approche de construction de solution en même temps, à savoir ACO (Ant Colony Optimization).
 	%talk about how BSO is amazing

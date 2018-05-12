@@ -106,7 +106,7 @@
 	
 	\subsection{La table des Phéromones}
 	\paragraph{}
-	La différence entre BSO et ACO réside dans le fait qu'une solution n'est pas obtenue selon le voisinage d'une autre solution, mais est construite pas à pas selon une règle de transition d'un état à un autre. Pour garder trace des phéromones déposées par les fourmilles lors de la construction de leur solutions respectives, nous pouvons utilisée un tableau a deux dimensions(Matrice) dont les lignes sont les variables de la solution, et les colonnes les deux litéraux de la variable associée. le schéma suivant traduit cela : 
+	La différence entre BSO et ACO réside dans le fait qu'une solution n'est pas obtenue selon le voisinage d'une autre solution, mais est construite pas à pas selon une règle de transition d'un état à un autre. Pour garder trace des phéromones déposées par les fourmis lors de la construction de leur solutions respectives, nous pouvons utilisée un tableau a deux dimensions(Matrice) dont les lignes sont les variables de la solution, et les colonnes les deux litéraux de la variable associée. le schéma suivant traduit cela : 
 	
 	\begin{minipage}{\textwidth}
 		\centering
@@ -133,7 +133,7 @@
 				3   & 0.1     & 0.1           \\ \hline
 				4   & \cellcolor{green}0.325     & \cellcolor{red!60}0.102           \\ \hline
 			\end{tabular}
-			\caption{Table des phéromones après le passage d'une fourmille}
+			\caption{Table des phéromones après le passage d'une fourmi}
 		\end{table}
 	\end{minipage}
 	\\~\\
@@ -145,20 +145,20 @@
 		\SetAlgoLined
 		\KwResult{retourne la meilleure solution trouvée}
 		\textbf{init}($pheromons$)\;
-		\textbf{init}($allParameters$)
+		\textbf{init}($allParameters$)\;
 		$meilleureSolution \gets randomSolution$\;
 		\While{$\neg$\textbf{fin()}}{
-			\ForEach{$fourmille \in fourmilles$}
+			\ForEach{$fourmi \in fourmis$}
 			{
-				\textbf{contruireSolution($fourmille$)}\;
-				\If{$isValide(fourmille.solution)$ }{
-					\Return $fourmille.solution$\;
+				\textbf{contruireSolution($fourmi$)}\;
+				\If{$isValide(fourmi.solution)$ }{
+					\Return $fourmi.solution$\;
 				}
 			}
-			\textbf{postConstructionActions($fourmilles$)}\;
+			\textbf{postConstructionActions($fourmis$)}\;
 			\tcp{sera vu plus en détails dans AS/ACS}\;
-			\If{\textbf{bestSolution}($fourmilles$)>$meilleureSolution$}{
-					$meilleureSolution \gets$ \textbf{bestSolution($fourmilles$)}\;		
+			\If{\textbf{bestSolution}($fourmis$)>$meilleureSolution$}{
+					$meilleureSolution \gets$ \textbf{bestSolution($fourmis$)}\;		
 				}
 				\textbf{miseAjourt}($pheromons$)\;
 			}
@@ -178,21 +178,21 @@
 		\textbf{init}($allParameters$)
 		$meilleureSolution \gets randomSolution$\;
 		\lFor{$t=1$ \KwTo maxItter}{
-			\ForEach{$fourmille \in fourmilles$}
+			\ForEach{$fourmi\in fourmis$}
 			{
-				\Repeat{$fourmille$ construit sa solution}
+				\Repeat{$fourmil$ construit sa solution}
 				{
 					$P_{i,j} \gets$ \textbf{calculerProba()}\;
 					$nextState \gets $ \textbf{selectNextBy($P_{i,j}$)}\; 
 				}
 				$evaluation$ = \textbf{evaluer($fourmlle.solution$)}\;
 				\If{$evaluation$ = $bestScore$}{
-					\Return $fourmille.solution$\;
+					\Return $fourmi.solution$\;
 				}
 				\textbf{onlinePheromonsUpdate($pheromons$)}\;
 			}
-			\If{\textbf{bestSolution}($fourmilles$)>$meilleureSolution$}{
-				$meilleureSolution \gets$ \textbf{bestSolution($fourmilles$)}\;		
+			\If{\textbf{bestSolution}($fourmis$)>$meilleureSolution$}{
+				$meilleureSolution \gets$ \textbf{bestSolution($fourmis$)}\;		
 			}
 			
 		}
@@ -220,7 +220,7 @@
 		oû : 
 		\begin{itemize}
 			\item $\rho$ est le taux d'évaporation de la phéromone
-			\item $\Delta_a T_{i,j}$ est le taux de phéromones ajouté par la fourmille $a$ sur le litéral $j$ de la variable $x_i$
+			\item $\Delta_a T_{i,j}$ est le taux de phéromones ajouté par la fourmi $a$ sur le litéral $j$ de la variable $x_i$
 			dans notre cas nous avons prit : \\
 			\begin{equation}
 				\Delta_a T_{i,j} = nbrClauseSatisfaites(x_{i,j})/nbrClauseTotal
@@ -303,34 +303,34 @@
 		\end{table}
 	\end{minipage}
 	\paragraph{}
-	Nous pouvons noter que ce comportement n'est pas toujours représentatif de la réalité, en effet selon cet algorithme la fourmille ne fait qu'explorer bêtement les traces de phéromones, il serait intéressant de modéliser le phénomènes d'exploitation de la plus forte trace de phéromone, cela a été introduit grâce à l'algorithme ACS. 
+	Nous pouvons noter que ce comportement n'est pas toujours représentatif de la réalité, en effet selon cet algorithme la fourmi ne fait qu'explorer bêtement les traces de phéromones, il serait intéressant de modéliser le phénomènes d'exploitation de la plus forte trace de phéromone, cela a été introduit grâce à l'algorithme ACS. 
 	\newpage
 	\subsection{ACS(Ant Colony System)}
-	Comme cité dans \ref{ACS}, ACS est une amélioration de AS dans le sens ou une fourmille peut adopter une comportement aléatoire lors de l'application de la règle de transition, elle pourra soit explorer de nouvelles opportunités ou bien exploiter la meilleure trace à sa disposition, la fourmille n'étant pas doté d'une intelligence assez développé pour faire ce choix systématique, elle choisira selon l'instant donné totalement au hasard, bien sur ce choix est conditionné par le fait que la plus part du temps une fourmille choisira la trace de phéromones la plus forte instinctivement. ACS se démarque aussi par l'ajout d'une mise a jour hors-ligne de la table des phéromones lorsque toute les fourmilles auront finit la construction de leurs solutions, le principe est que la fourmille ayant fournit la meilleure solution ajoute la quantité de phéromone proportionnelle à sa solution, en gardant aussi la mise à jour en-ligne(step by step ) des fourmilles lors  de la construction de leurs solutions respectives.
+	Comme cité dans \ref{ACS}, ACS est une amélioration de AS dans le sens ou une fourmi peut adopter une comportement aléatoire lors de l'application de la règle de transition, elle pourra soit explorer de nouvelles opportunités ou bien exploiter la meilleure trace à sa disposition, la fourmi n'étant pas doté d'une intelligence assez développé pour faire ce choix systématique, elle choisira selon l'instant donné totalement au hasard, bien sur ce choix est conditionné par le fait que la plus part du temps une fourmi choisira la trace de phéromones la plus forte instinctivement. ACS se démarque aussi par l'ajout d'une mise a jour hors-ligne de la table des phéromones lorsque toute les fourmis auront finit la construction de leurs solutions, le principe est que la fourmi ayant fournit la meilleure solution ajoute la quantité de phéromone proportionnelle à sa solution, en gardant aussi la mise à jour en-ligne(step by step ) des fourmis lors  de la construction de leurs solutions respectives.
 	
 	
 	\begin{algorithm}[H]
 		\SetAlgoLined
 		\KwResult{retourne la meilleure solution trouvée}
 		\textbf{init}($pheromons$)\;
-		\textbf{init}($allParameters$)
+		\textbf{init}($allParameters$)\;
 		$meilleureSolution \gets randomSolution$\;
 		\lFor{$t=1$ \KwTo maxItter}{
-			\ForEach{$fourmille \in fourmilles$}
+			\ForEach{$fourmi \in fourmis$}
 			{
-				\Repeat{$fourmille$ construit sa solution}
+				\Repeat{$fourmi$ construit sa solution}
 				{
 					$P_{i,j} \gets$ \textbf{calculerProba()}\;
 					$nextState \gets $ \textbf{selectNextBy($P_{i,j}$)}\; 
 				}
 				$evaluation$ = \textbf{evaluer($fourmlle.solution$)}\;
 				\If{$evaluation$ = $bestScore$}{
-					\Return $fourmille.solution$\;
+					\Return $fourmi.solution$\;
 				}
 				\textbf{onlinePheromonsUpdate($pheromons$)}\;
 			}
-			\If{\textbf{bestSolution}($fourmilles$)>$meilleureSolution$}{
-				$meilleureSolution \gets$ \textbf{bestSolution($fourmilles$)}\;		
+			\If{\textbf{bestSolution}($fourmis$)>$meilleureSolution$}{
+				$meilleureSolution \gets$ \textbf{bestSolution($fourmis$)}\;		
 			}
 			\textbf{offLinePheromonsUpdate($pheromons,meilleurFourmille$)}\;
 			
@@ -390,12 +390,12 @@
 		\end{equation*}
 		\begin{itemize}
 			\item $\rho$ est le taux d'évaporation de la phéromone
-			\item $\Delta_a T_{i,j}$ est le taux de phéromones ajouté par la fourmille $a$ sur le litéral $j$ de la variable $x_i$
+			\item $\Delta_a T_{i,j}$ est le taux de phéromones ajouté par la fourmil $a$ sur le litéral $j$ de la variable $x_i$
 			dans notre cas nous avons prit : \\
 			\begin{equation}
 			\Delta T{i,j}^{bestAnt} = nbrClauseSatisfaites(x_{i,j}^{bestAnt})/nbrClauseTotal
 			\end{equation}
-			l'idée est que la fourmille avec le plus haut taux de réussite dépose plus de phéromones après la construction des solutions.
+			l'idée est que la fourmi avec le plus haut taux de réussite dépose plus de phéromones après la construction des solutions.
 		\end{itemize}
 	\end{enumerate}
 	\newpage
@@ -497,11 +497,11 @@
 	\paragraph{}
 	Pour améliorer encore plus les deux implémentation d'ACO, une séquence d'actions appelées \textbf{Deamons} peut être exécutée, dans notre cas nous avons choisis les deux traitements suivants : 
 	\begin{itemize}
-		\item \textbf{exploreNeighbours} : elle consiste en une recherche locale d'une solution voisine par une fourmille quelconque, a travers une recherche "Tabou" classique eut coûteuse, afin d'éviter de tomber dans des optimums locaux, la recherche est freiné après un petit nombre d'itérations appelé \textbf{step}(dans les 15 20 itérations).
+		\item \textbf{exploreNeighbours} : elle consiste en une recherche locale d'une solution voisine par une fourmi quelconque, a travers une recherche "Tabou" classique eut coûteuse, afin d'éviter de tomber dans des optimums locaux, la recherche est freiné après un petit nombre d'itérations appelé \textbf{step}(dans les 15 20 itérations).
 		\begin{figure}[H]
 			\centering
 			\includegraphics[width=0.7\textwidth]{images/localSearch.jpg}
 			\caption{Exemple de recherche locale}
 		\end{figure}
-		\item \textbf{improveSolution} : le but est de  satisfaire un peu plus de clauses a chaque itérations en inversant la valeur d'une variable si elle apparait dans une clause non satisfaites de l'instance, si la nouvelle solution est meilleure que l'orignal, alors elle deviendra la solution construite par la fourmille.
+		\item \textbf{improveSolution} : le but est de  satisfaire un peu plus de clauses a chaque itérations en inversant la valeur d'une variable si elle apparait dans une clause non satisfaites de l'instance, si la nouvelle solution est meilleure que l'orignal, alors elle deviendra la solution construite par la fourmi.
 	\end{itemize}
